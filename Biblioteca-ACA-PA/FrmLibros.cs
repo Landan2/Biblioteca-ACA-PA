@@ -14,15 +14,11 @@ namespace Biblioteca_ACA_PA
         {
             InitializeComponent();
         }
-
-<<<<<<< HEAD
         private void btnGuardar_Click(object sender, EventArgs e)
-        {
-
+        { 
+        
         }
-=======
 
->>>>>>> origin/main
     }
 
 }

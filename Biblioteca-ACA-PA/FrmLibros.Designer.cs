@@ -49,7 +49,7 @@
             lblAutor = new Label();
             lblTituloLibro = new Label();
             lblISBN = new Label();
-<<<<<<< HEAD
+
             pnlBotones = new Panel();
             btnGuardar = new FontAwesome.Sharp.IconButton();
             btnNuevo = new FontAwesome.Sharp.IconButton();
@@ -58,16 +58,13 @@
             pnlBusqueda.SuspendLayout();
             pnlDatos.SuspendLayout();
             pnlBotones.SuspendLayout();
-=======
+
             pnlTitulos.SuspendLayout();
             pnlBusqueda.SuspendLayout();
             pnlDatos.SuspendLayout();
->>>>>>> origin/main
+
             SuspendLayout();
-            // 
-            // pnlTitulos
-            // 
-<<<<<<< HEAD
+     
             pnlTitulos.BackColor = Color.Black;
             pnlTitulos.Controls.Add(lblTitulo);
             pnlTitulos.Dock = DockStyle.Top;
@@ -76,97 +73,89 @@
             pnlTitulos.Margin = new Padding(3, 4, 3, 4);
             pnlTitulos.Name = "pnlTitulos";
             pnlTitulos.Size = new Size(882, 80);
-=======
+
             pnlTitulos.BackColor = Color.LightGray;
             pnlTitulos.Controls.Add(lblTitulo);
             pnlTitulos.Dock = DockStyle.Top;
             pnlTitulos.Location = new Point(0, 0);
             pnlTitulos.Name = "pnlTitulos";
             pnlTitulos.Size = new Size(800, 60);
->>>>>>> origin/main
+
             pnlTitulos.TabIndex = 0;
-            // 
-            // lblTitulo
-            // 
+            
             lblTitulo.AutoSize = true;
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Sitka Banner", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-<<<<<<< HEAD
+
             lblTitulo.ForeColor = Color.Firebrick;
             lblTitulo.Location = new Point(311, 5);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(364, 68);
-=======
             lblTitulo.ForeColor = SystemColors.ActiveCaptionText;
             lblTitulo.Location = new Point(272, 4);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(285, 53);
->>>>>>> origin/main
+
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Gestión de Libros";
-            // 
-            // pnlBusqueda
-            // 
+           
             pnlBusqueda.BackColor = Color.WhiteSmoke;
             pnlBusqueda.Controls.Add(btnBuscar);
             pnlBusqueda.Controls.Add(txtBuscar);
             pnlBusqueda.Controls.Add(lblBuscar);
             pnlBusqueda.Dock = DockStyle.Top;
-<<<<<<< HEAD
+
             pnlBusqueda.Location = new Point(0, 80);
             pnlBusqueda.Margin = new Padding(3, 4, 3, 4);
             pnlBusqueda.Name = "pnlBusqueda";
             pnlBusqueda.Size = new Size(882, 73);
-=======
+
             pnlBusqueda.Location = new Point(0, 60);
             pnlBusqueda.Name = "pnlBusqueda";
             pnlBusqueda.Size = new Size(800, 55);
->>>>>>> origin/main
+
             pnlBusqueda.TabIndex = 1;
-            // 
-            // btnBuscar
-            // 
-<<<<<<< HEAD
+            
             btnBuscar.Location = new Point(511, 31);
             btnBuscar.Margin = new Padding(3, 4, 3, 4);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(86, 31);
-=======
+
             btnBuscar.Location = new Point(447, 23);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(75, 23);
->>>>>>> origin/main
+
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
             // 
             // txtBuscar
             // 
-<<<<<<< HEAD
+
             txtBuscar.Location = new Point(275, 31);
             txtBuscar.Margin = new Padding(3, 4, 3, 4);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(206, 27);
-=======
+
             txtBuscar.Location = new Point(241, 23);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(181, 23);
->>>>>>> origin/main
+
             txtBuscar.TabIndex = 1;
             // 
             // lblBuscar
             // 
             lblBuscar.AutoSize = true;
             lblBuscar.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-<<<<<<< HEAD
+
             lblBuscar.Location = new Point(165, 31);
             lblBuscar.Name = "lblBuscar";
             lblBuscar.Size = new Size(115, 24);
-=======
+
             lblBuscar.Location = new Point(144, 23);
             lblBuscar.Name = "lblBuscar";
             lblBuscar.Size = new Size(91, 19);
->>>>>>> origin/main
+
             lblBuscar.TabIndex = 0;
             lblBuscar.Text = "ISBN-Codigo";
             // 
@@ -187,131 +176,113 @@
             pnlDatos.Controls.Add(lblTituloLibro);
             pnlDatos.Controls.Add(lblISBN);
             pnlDatos.Dock = DockStyle.Top;
-<<<<<<< HEAD
+
             pnlDatos.Location = new Point(0, 153);
             pnlDatos.Margin = new Padding(3, 4, 3, 4);
             pnlDatos.Name = "pnlDatos";
             pnlDatos.Size = new Size(882, 477);
-=======
+
             pnlDatos.Location = new Point(0, 115);
             pnlDatos.Name = "pnlDatos";
             pnlDatos.Size = new Size(800, 336);
->>>>>>> origin/main
+
             pnlDatos.TabIndex = 2;
             // 
             // cmbEditorial
             // 
             cmbEditorial.FormattingEnabled = true;
-<<<<<<< HEAD
+
             cmbEditorial.Location = new Point(314, 208);
             cmbEditorial.Margin = new Padding(3, 4, 3, 4);
             cmbEditorial.Name = "cmbEditorial";
             cmbEditorial.Size = new Size(205, 28);
-=======
+
             cmbEditorial.Location = new Point(275, 156);
             cmbEditorial.Name = "cmbEditorial";
             cmbEditorial.Size = new Size(180, 23);
->>>>>>> origin/main
+
             cmbEditorial.TabIndex = 15;
-            // 
-            // cmbAutor
-            // 
+            
             cmbAutor.FormattingEnabled = true;
-<<<<<<< HEAD
+
             cmbAutor.Location = new Point(314, 156);
             cmbAutor.Margin = new Padding(3, 4, 3, 4);
             cmbAutor.Name = "cmbAutor";
             cmbAutor.Size = new Size(205, 28);
-=======
+
             cmbAutor.Location = new Point(275, 117);
             cmbAutor.Name = "cmbAutor";
             cmbAutor.Size = new Size(180, 23);
->>>>>>> origin/main
+
             cmbAutor.TabIndex = 14;
-            // 
-            // txtExsistencias
-            // 
-<<<<<<< HEAD
+            
             txtExsistencias.Location = new Point(307, 379);
             txtExsistencias.Margin = new Padding(3, 4, 3, 4);
             txtExsistencias.Name = "txtExsistencias";
             txtExsistencias.Size = new Size(212, 27);
-=======
+
             txtExsistencias.Location = new Point(269, 284);
             txtExsistencias.Name = "txtExsistencias";
             txtExsistencias.Size = new Size(186, 23);
->>>>>>> origin/main
+
             txtExsistencias.TabIndex = 13;
-            // 
-            // txtAño
-            // 
-<<<<<<< HEAD
+            
             txtAño.Location = new Point(307, 319);
             txtAño.Margin = new Padding(3, 4, 3, 4);
             txtAño.Name = "txtAño";
             txtAño.Size = new Size(212, 27);
-=======
+
             txtAño.Location = new Point(269, 239);
             txtAño.Name = "txtAño";
             txtAño.Size = new Size(186, 23);
->>>>>>> origin/main
+
             txtAño.TabIndex = 12;
-            // 
-            // txtCategoria
-            // 
-<<<<<<< HEAD
+            
             txtCategoria.Location = new Point(311, 261);
             txtCategoria.Margin = new Padding(3, 4, 3, 4);
             txtCategoria.Name = "txtCategoria";
             txtCategoria.Size = new Size(212, 27);
-=======
+
             txtCategoria.Location = new Point(272, 196);
             txtCategoria.Name = "txtCategoria";
             txtCategoria.Size = new Size(186, 23);
->>>>>>> origin/main
+
             txtCategoria.TabIndex = 11;
-            // 
-            // txtTitulo
-            // 
-<<<<<<< HEAD
+            
             txtTitulo.Location = new Point(311, 95);
             txtTitulo.Margin = new Padding(3, 4, 3, 4);
             txtTitulo.Name = "txtTitulo";
             txtTitulo.Size = new Size(212, 27);
-=======
+
             txtTitulo.Location = new Point(272, 71);
             txtTitulo.Name = "txtTitulo";
             txtTitulo.Size = new Size(186, 23);
->>>>>>> origin/main
             txtTitulo.TabIndex = 8;
-            // 
-            // txtISBN
-            // 
-<<<<<<< HEAD
+            
             txtISBN.Location = new Point(311, 45);
             txtISBN.Margin = new Padding(3, 4, 3, 4);
             txtISBN.Name = "txtISBN";
             txtISBN.Size = new Size(212, 27);
-=======
+
             txtISBN.Location = new Point(272, 34);
             txtISBN.Name = "txtISBN";
             txtISBN.Size = new Size(186, 23);
->>>>>>> origin/main
+
             txtISBN.TabIndex = 3;
             // 
             // lblExistencias
             // 
             lblExistencias.AutoSize = true;
             lblExistencias.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-<<<<<<< HEAD
+
             lblExistencias.Location = new Point(191, 379);
             lblExistencias.Name = "lblExistencias";
             lblExistencias.Size = new Size(112, 24);
-=======
+
             lblExistencias.Location = new Point(167, 284);
             lblExistencias.Name = "lblExistencias";
             lblExistencias.Size = new Size(88, 19);
->>>>>>> origin/main
+
             lblExistencias.TabIndex = 7;
             lblExistencias.Text = "Existencias:";
             // 
@@ -319,15 +290,15 @@
             // 
             lblAño.AutoSize = true;
             lblAño.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-<<<<<<< HEAD
+
             lblAño.Location = new Point(191, 324);
             lblAño.Name = "lblAño";
             lblAño.Size = new Size(48, 24);
-=======
+
             lblAño.Location = new Point(167, 243);
             lblAño.Name = "lblAño";
             lblAño.Size = new Size(39, 19);
->>>>>>> origin/main
+
             lblAño.TabIndex = 6;
             lblAño.Text = "Año:";
             // 
@@ -335,15 +306,15 @@
             // 
             lblCategoria.AutoSize = true;
             lblCategoria.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-<<<<<<< HEAD
+
             lblCategoria.Location = new Point(191, 267);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(97, 24);
-=======
+
             lblCategoria.Location = new Point(167, 200);
             lblCategoria.Name = "lblCategoria";
             lblCategoria.Size = new Size(75, 19);
->>>>>>> origin/main
+
             lblCategoria.TabIndex = 5;
             lblCategoria.Text = "Categoria:";
             // 
@@ -351,15 +322,15 @@
             // 
             lblEditorial.AutoSize = true;
             lblEditorial.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-<<<<<<< HEAD
+
             lblEditorial.Location = new Point(191, 208);
             lblEditorial.Name = "lblEditorial";
             lblEditorial.Size = new Size(91, 24);
-=======
+
             lblEditorial.Location = new Point(167, 156);
             lblEditorial.Name = "lblEditorial";
             lblEditorial.Size = new Size(72, 19);
->>>>>>> origin/main
+
             lblEditorial.TabIndex = 4;
             lblEditorial.Text = "Editorial:";
             // 
@@ -367,15 +338,15 @@
             // 
             lblAutor.AutoSize = true;
             lblAutor.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-<<<<<<< HEAD
+
             lblAutor.Location = new Point(194, 153);
             lblAutor.Name = "lblAutor";
             lblAutor.Size = new Size(63, 24);
-=======
+
             lblAutor.Location = new Point(170, 115);
             lblAutor.Name = "lblAutor";
             lblAutor.Size = new Size(50, 19);
->>>>>>> origin/main
+
             lblAutor.TabIndex = 3;
             lblAutor.Text = "Autor:";
             // 
@@ -383,15 +354,15 @@
             // 
             lblTituloLibro.AutoSize = true;
             lblTituloLibro.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-<<<<<<< HEAD
+
             lblTituloLibro.Location = new Point(194, 95);
             lblTituloLibro.Name = "lblTituloLibro";
             lblTituloLibro.Size = new Size(67, 24);
-=======
+
             lblTituloLibro.Location = new Point(170, 71);
             lblTituloLibro.Name = "lblTituloLibro";
             lblTituloLibro.Size = new Size(54, 19);
->>>>>>> origin/main
+
             lblTituloLibro.TabIndex = 2;
             lblTituloLibro.Text = "Titulo:";
             // 
@@ -399,7 +370,7 @@
             // 
             lblISBN.AutoSize = true;
             lblISBN.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-<<<<<<< HEAD
+
             lblISBN.Location = new Point(194, 45);
             lblISBN.Name = "lblISBN";
             lblISBN.Size = new Size(121, 24);
@@ -475,15 +446,13 @@
             Name = "FrmLibros";
             Text = "FrmLibros";
             WindowState = FormWindowState.Maximized;
-=======
+
             lblISBN.Location = new Point(170, 34);
             lblISBN.Name = "lblISBN";
             lblISBN.Size = new Size(96, 19);
             lblISBN.TabIndex = 1;
             lblISBN.Text = "ISBN-Codigo:";
-            // 
-            // FrmLibros
-            // 
+           
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
@@ -492,17 +461,16 @@
             Controls.Add(pnlTitulos);
             Name = "FrmLibros";
             Text = "FrmLibros";
->>>>>>> origin/main
+
             pnlTitulos.ResumeLayout(false);
             pnlTitulos.PerformLayout();
             pnlBusqueda.ResumeLayout(false);
             pnlBusqueda.PerformLayout();
             pnlDatos.ResumeLayout(false);
             pnlDatos.PerformLayout();
-<<<<<<< HEAD
+
             pnlBotones.ResumeLayout(false);
-=======
->>>>>>> origin/main
+
             ResumeLayout(false);
         }
 
@@ -529,12 +497,11 @@
         private TextBox txtExsistencias;
         private ComboBox cmbEditorial;
         private ComboBox cmbAutor;
-<<<<<<< HEAD
+
         private Panel pnlBotones;
         private FontAwesome.Sharp.IconButton btnNuevo;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private FontAwesome.Sharp.IconButton iconButton1;
-=======
->>>>>>> origin/main
+
     }
 }

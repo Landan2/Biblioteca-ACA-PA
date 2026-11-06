@@ -14,11 +14,21 @@ namespace Biblioteca_ACA_PA
         {
             InitializeComponent();
         }
-        private void btnGuardar_Click(object sender, EventArgs e)
-        { 
-        
+
+        private void pnlTitulos_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmLibros_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

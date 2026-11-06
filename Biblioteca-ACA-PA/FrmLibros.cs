@@ -15,7 +15,10 @@ namespace Biblioteca_ACA_PA
             InitializeComponent();
         }
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
 
+    }
     }
 
 }

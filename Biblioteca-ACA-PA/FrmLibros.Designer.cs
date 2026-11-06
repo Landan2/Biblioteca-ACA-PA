@@ -61,14 +61,12 @@
             // 
             // pnlTitulos
             // 
-            pnlTitulos.BackColor = Color.Black;
             pnlTitulos.Controls.Add(lblTitulo);
             pnlTitulos.Dock = DockStyle.Top;
             pnlTitulos.ForeColor = SystemColors.ControlText;
             pnlTitulos.Location = new Point(0, 0);
             pnlTitulos.Margin = new Padding(3, 4, 3, 4);
             pnlTitulos.Name = "pnlTitulos";
-            pnlTitulos.Size = new Size(882, 80);
             pnlTitulos.TabIndex = 0;
             // 
             // lblTitulo
@@ -76,10 +74,7 @@
             lblTitulo.AutoSize = true;
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Sitka Banner", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = Color.Firebrick;
-            lblTitulo.Location = new Point(311, 5);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(364, 68);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Gestión de Libros";
             // 
@@ -90,37 +85,26 @@
             pnlBusqueda.Controls.Add(txtBuscar);
             pnlBusqueda.Controls.Add(lblBuscar);
             pnlBusqueda.Dock = DockStyle.Top;
-            pnlBusqueda.Location = new Point(0, 80);
-            pnlBusqueda.Margin = new Padding(3, 4, 3, 4);
             pnlBusqueda.Name = "pnlBusqueda";
-            pnlBusqueda.Size = new Size(882, 73);
             pnlBusqueda.TabIndex = 1;
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(511, 31);
-            btnBuscar.Margin = new Padding(3, 4, 3, 4);
             btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(86, 31);
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(275, 31);
-            txtBuscar.Margin = new Padding(3, 4, 3, 4);
             txtBuscar.Name = "txtBuscar";
-            txtBuscar.Size = new Size(206, 27);
             txtBuscar.TabIndex = 1;
             // 
             // lblBuscar
             // 
             lblBuscar.AutoSize = true;
             lblBuscar.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBuscar.Location = new Point(165, 31);
             lblBuscar.Name = "lblBuscar";
-            lblBuscar.Size = new Size(115, 24);
             lblBuscar.TabIndex = 0;
             lblBuscar.Text = "ISBN-Codigo";
             // 
@@ -141,77 +125,51 @@
             pnlDatos.Controls.Add(lblTituloLibro);
             pnlDatos.Controls.Add(lblISBN);
             pnlDatos.Dock = DockStyle.Top;
-            pnlDatos.Location = new Point(0, 153);
-            pnlDatos.Margin = new Padding(3, 4, 3, 4);
             pnlDatos.Name = "pnlDatos";
-            pnlDatos.Size = new Size(882, 477);
             pnlDatos.TabIndex = 2;
             // 
             // cmbEditorial
             // 
             cmbEditorial.FormattingEnabled = true;
-            cmbEditorial.Location = new Point(314, 208);
-            cmbEditorial.Margin = new Padding(3, 4, 3, 4);
             cmbEditorial.Name = "cmbEditorial";
-            cmbEditorial.Size = new Size(205, 28);
             cmbEditorial.TabIndex = 15;
             // 
             // cmbAutor
             // 
             cmbAutor.FormattingEnabled = true;
-            cmbAutor.Location = new Point(314, 156);
-            cmbAutor.Margin = new Padding(3, 4, 3, 4);
             cmbAutor.Name = "cmbAutor";
-            cmbAutor.Size = new Size(205, 28);
             cmbAutor.TabIndex = 14;
             // 
             // txtExsistencias
             // 
-            txtExsistencias.Location = new Point(307, 379);
-            txtExsistencias.Margin = new Padding(3, 4, 3, 4);
             txtExsistencias.Name = "txtExsistencias";
-            txtExsistencias.Size = new Size(212, 27);
             txtExsistencias.TabIndex = 13;
             // 
             // txtAño
             // 
-            txtAño.Location = new Point(307, 319);
-            txtAño.Margin = new Padding(3, 4, 3, 4);
             txtAño.Name = "txtAño";
-            txtAño.Size = new Size(212, 27);
             txtAño.TabIndex = 12;
             // 
             // txtCategoria
             // 
-            txtCategoria.Location = new Point(311, 261);
-            txtCategoria.Margin = new Padding(3, 4, 3, 4);
             txtCategoria.Name = "txtCategoria";
-            txtCategoria.Size = new Size(212, 27);
             txtCategoria.TabIndex = 11;
             // 
             // txtTitulo
             // 
-            txtTitulo.Location = new Point(311, 95);
-            txtTitulo.Margin = new Padding(3, 4, 3, 4);
             txtTitulo.Name = "txtTitulo";
-            txtTitulo.Size = new Size(212, 27);
             txtTitulo.TabIndex = 8;
             // 
             // txtISBN
             // 
-            txtISBN.Location = new Point(311, 45);
-            txtISBN.Margin = new Padding(3, 4, 3, 4);
             txtISBN.Name = "txtISBN";
-            txtISBN.Size = new Size(212, 27);
             txtISBN.TabIndex = 3;
             // 
             // lblExistencias
             // 
             lblExistencias.AutoSize = true;
             lblExistencias.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblExistencias.Location = new Point(191, 379);
             lblExistencias.Name = "lblExistencias";
-            lblExistencias.Size = new Size(112, 24);
             lblExistencias.TabIndex = 7;
             lblExistencias.Text = "Existencias:";
             // 
@@ -219,9 +177,7 @@
             // 
             lblAño.AutoSize = true;
             lblAño.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAño.Location = new Point(191, 324);
             lblAño.Name = "lblAño";
-            lblAño.Size = new Size(48, 24);
             lblAño.TabIndex = 6;
             lblAño.Text = "Año:";
             // 
@@ -229,9 +185,7 @@
             // 
             lblCategoria.AutoSize = true;
             lblCategoria.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCategoria.Location = new Point(191, 267);
             lblCategoria.Name = "lblCategoria";
-            lblCategoria.Size = new Size(97, 24);
             lblCategoria.TabIndex = 5;
             lblCategoria.Text = "Categoria:";
             // 
@@ -239,9 +193,7 @@
             // 
             lblEditorial.AutoSize = true;
             lblEditorial.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblEditorial.Location = new Point(191, 208);
             lblEditorial.Name = "lblEditorial";
-            lblEditorial.Size = new Size(91, 24);
             lblEditorial.TabIndex = 4;
             lblEditorial.Text = "Editorial:";
             // 
@@ -249,9 +201,7 @@
             // 
             lblAutor.AutoSize = true;
             lblAutor.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAutor.Location = new Point(194, 153);
             lblAutor.Name = "lblAutor";
-            lblAutor.Size = new Size(63, 24);
             lblAutor.TabIndex = 3;
             lblAutor.Text = "Autor:";
             // 
@@ -259,9 +209,7 @@
             // 
             lblTituloLibro.AutoSize = true;
             lblTituloLibro.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTituloLibro.Location = new Point(194, 95);
             lblTituloLibro.Name = "lblTituloLibro";
-            lblTituloLibro.Size = new Size(67, 24);
             lblTituloLibro.TabIndex = 2;
             lblTituloLibro.Text = "Titulo:";
             // 
@@ -269,9 +217,7 @@
             // 
             lblISBN.AutoSize = true;
             lblISBN.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblISBN.Location = new Point(194, 45);
             lblISBN.Name = "lblISBN";
-            lblISBN.Size = new Size(121, 24);
             lblISBN.TabIndex = 1;
             lblISBN.Text = "ISBN-Codigo:";
             // 
@@ -333,10 +279,7 @@
             // 
             // FrmLibros
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(882, 741);
-            Controls.Add(pnlBotones);
             Controls.Add(pnlDatos);
             Controls.Add(pnlBusqueda);
             Controls.Add(pnlTitulos);

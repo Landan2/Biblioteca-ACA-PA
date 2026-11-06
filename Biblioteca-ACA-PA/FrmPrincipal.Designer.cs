@@ -66,7 +66,6 @@
             pnlMenu.Location = new Point(0, 0);
             pnlMenu.Margin = new Padding(3, 4, 3, 4);
             pnlMenu.Name = "pnlMenu";
-            pnlMenu.Size = new Size(343, 600);
             pnlMenu.TabIndex = 0;
             // 
             // btnSalir
@@ -80,10 +79,7 @@
             btnSalir.IconColor = Color.Black;
             btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnSalir.IconSize = 30;
-            btnSalir.Location = new Point(0, 484);
-            btnSalir.Margin = new Padding(0, 13, 0, 13);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(343, 52);
             btnSalir.TabIndex = 8;
             btnSalir.Text = "Salir";
             btnSalir.TextAlign = ContentAlignment.MiddleLeft;
@@ -102,10 +98,7 @@
             btnReportes.IconColor = Color.Black;
             btnReportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnReportes.IconSize = 30;
-            btnReportes.Location = new Point(0, 432);
-            btnReportes.Margin = new Padding(0, 13, 0, 13);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(343, 52);
             btnReportes.TabIndex = 7;
             btnReportes.Text = "Reportes";
             btnReportes.TextAlign = ContentAlignment.MiddleLeft;
@@ -124,10 +117,7 @@
             btnPrestamos.IconColor = Color.Black;
             btnPrestamos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnPrestamos.IconSize = 30;
-            btnPrestamos.Location = new Point(0, 380);
-            btnPrestamos.Margin = new Padding(0, 13, 0, 13);
             btnPrestamos.Name = "btnPrestamos";
-            btnPrestamos.Size = new Size(343, 52);
             btnPrestamos.TabIndex = 6;
             btnPrestamos.Text = "Prestamos";
             btnPrestamos.TextAlign = ContentAlignment.MiddleLeft;
@@ -146,10 +136,7 @@
             btnEditoriales.IconColor = Color.Black;
             btnEditoriales.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEditoriales.IconSize = 30;
-            btnEditoriales.Location = new Point(0, 328);
-            btnEditoriales.Margin = new Padding(0, 13, 0, 13);
             btnEditoriales.Name = "btnEditoriales";
-            btnEditoriales.Size = new Size(343, 52);
             btnEditoriales.TabIndex = 5;
             btnEditoriales.Text = "Editoriales";
             btnEditoriales.TextAlign = ContentAlignment.MiddleLeft;
@@ -168,10 +155,7 @@
             btnAutores.IconColor = Color.Black;
             btnAutores.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnAutores.IconSize = 30;
-            btnAutores.Location = new Point(0, 276);
-            btnAutores.Margin = new Padding(0, 13, 0, 13);
             btnAutores.Name = "btnAutores";
-            btnAutores.Size = new Size(343, 52);
             btnAutores.TabIndex = 4;
             btnAutores.Text = "Autores";
             btnAutores.TextAlign = ContentAlignment.MiddleLeft;
@@ -190,10 +174,7 @@
             btnUsuarios.IconColor = Color.Black;
             btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnUsuarios.IconSize = 30;
-            btnUsuarios.Location = new Point(0, 224);
-            btnUsuarios.Margin = new Padding(0, 13, 0, 13);
             btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Size = new Size(343, 52);
             btnUsuarios.TabIndex = 3;
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.TextAlign = ContentAlignment.MiddleLeft;
@@ -212,10 +193,7 @@
             btnLibros.IconColor = Color.Black;
             btnLibros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnLibros.IconSize = 30;
-            btnLibros.Location = new Point(0, 172);
-            btnLibros.Margin = new Padding(0, 13, 0, 13);
             btnLibros.Name = "btnLibros";
-            btnLibros.Size = new Size(343, 52);
             btnLibros.TabIndex = 2;
             btnLibros.Text = "Libros";
             btnLibros.TextAlign = ContentAlignment.MiddleLeft;
@@ -234,10 +212,7 @@
             btnInicio.IconColor = Color.Black;
             btnInicio.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnInicio.IconSize = 30;
-            btnInicio.Location = new Point(0, 120);
-            btnInicio.Margin = new Padding(0, 13, 0, 13);
             btnInicio.Name = "btnInicio";
-            btnInicio.Size = new Size(343, 52);
             btnInicio.TabIndex = 1;
             btnInicio.Text = "Inicio";
             btnInicio.TextAlign = ContentAlignment.MiddleLeft;
@@ -255,7 +230,6 @@
             pnlLogo.Location = new Point(0, 0);
             pnlLogo.Margin = new Padding(3, 4, 3, 4);
             pnlLogo.Name = "pnlLogo";
-            pnlLogo.Size = new Size(343, 120);
             pnlLogo.TabIndex = 0;
             // 
             // picLogo
@@ -263,10 +237,7 @@
             picLogo.BackColor = Color.DarkGray;
             picLogo.BackgroundImageLayout = ImageLayout.Zoom;
             picLogo.Image = (Image)resources.GetObject("picLogo.Image");
-            picLogo.Location = new Point(3, 4);
-            picLogo.Margin = new Padding(3, 4, 3, 4);
             picLogo.Name = "picLogo";
-            picLogo.Size = new Size(127, 112);
             picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             picLogo.TabIndex = 2;
             picLogo.TabStop = false;
@@ -277,9 +248,7 @@
             lblSubtitulo.BackColor = Color.Maroon;
             lblSubtitulo.Font = new Font("Sitka Heading", 11.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblSubtitulo.ForeColor = SystemColors.ButtonShadow;
-            lblSubtitulo.Location = new Point(137, 60);
             lblSubtitulo.Name = "lblSubtitulo";
-            lblSubtitulo.Size = new Size(172, 28);
             lblSubtitulo.TabIndex = 1;
             lblSubtitulo.Text = "Sistema de Gestión";
             // 
@@ -289,47 +258,33 @@
             lblTitulo.BackColor = Color.Maroon;
             lblTitulo.Font = new Font("Sitka Heading", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = SystemColors.ActiveCaptionText;
-            lblTitulo.Location = new Point(137, 4);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(230, 53);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "BIBLIOTECA";
             // 
             // pnlSuperior
             // 
-            pnlSuperior.BackColor = Color.LightGray;
             pnlSuperior.Dock = DockStyle.Top;
-            pnlSuperior.Location = new Point(343, 0);
-            pnlSuperior.Margin = new Padding(3, 4, 3, 4);
             pnlSuperior.Name = "pnlSuperior";
-            pnlSuperior.Size = new Size(462, 120);
             pnlSuperior.TabIndex = 1;
             // 
             // pnlEstado
             // 
             pnlEstado.BackColor = SystemColors.ScrollBar;
             pnlEstado.Dock = DockStyle.Bottom;
-            pnlEstado.Location = new Point(343, 545);
-            pnlEstado.Margin = new Padding(3, 4, 3, 4);
             pnlEstado.Name = "pnlEstado";
-            pnlEstado.Size = new Size(462, 55);
             pnlEstado.TabIndex = 2;
             // 
             // pnlContenido
             // 
             pnlContenido.BackColor = SystemColors.GradientActiveCaption;
             pnlContenido.Dock = DockStyle.Fill;
-            pnlContenido.Location = new Point(343, 120);
-            pnlContenido.Margin = new Padding(3, 4, 3, 4);
             pnlContenido.Name = "pnlContenido";
-            pnlContenido.Size = new Size(462, 425);
             pnlContenido.TabIndex = 3;
             // 
             // FrmPrincipal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(805, 600);
             Controls.Add(pnlContenido);
             Controls.Add(pnlEstado);
             Controls.Add(pnlSuperior);

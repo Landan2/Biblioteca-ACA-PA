@@ -533,10 +533,8 @@ namespace Biblioteca_ACA_PA
 
         }
 
-        private void FrmLibros_Load(object sender, EventArgs e)
-        {
-
-        }
+        
+       
 
 
 
@@ -550,7 +548,7 @@ namespace Biblioteca_ACA_PA
 
 
 
-    
+
 
 }
 

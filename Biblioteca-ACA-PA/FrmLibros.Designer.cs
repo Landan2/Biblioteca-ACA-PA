@@ -102,7 +102,7 @@
             // 
             // btnBuscar
             // 
-            btnBuscar.Location = new Point(668, 18);
+            btnBuscar.Location = new Point(671, 14);
             btnBuscar.Margin = new Padding(3, 4, 3, 4);
             btnBuscar.Name = "btnBuscar";
             btnBuscar.Size = new Size(75, 23);
@@ -113,7 +113,7 @@
             // 
             // txtBuscar
             // 
-            txtBuscar.Location = new Point(462, 18);
+            txtBuscar.Location = new Point(467, 14);
             txtBuscar.Margin = new Padding(3, 4, 3, 4);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(181, 23);
@@ -123,11 +123,11 @@
             // 
             lblBuscar.AutoSize = true;
             lblBuscar.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBuscar.Location = new Point(365, 18);
+            lblBuscar.Location = new Point(357, 14);
             lblBuscar.Name = "lblBuscar";
-            lblBuscar.Size = new Size(91, 19);
+            lblBuscar.Size = new Size(86, 19);
             lblBuscar.TabIndex = 0;
-            lblBuscar.Text = "ISBN-Codigo";
+            lblBuscar.Text = "ISBN-Libro:";
             // 
             // pnlDatos
             // 

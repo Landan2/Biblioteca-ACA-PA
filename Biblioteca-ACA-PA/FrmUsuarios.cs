@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
+using Biblioteca_ACA_PA.ConexionDatos;
 
 namespace Biblioteca_ACA_PA
 {

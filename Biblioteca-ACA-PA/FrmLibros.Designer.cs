@@ -403,6 +403,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmLibros";
             WindowState = FormWindowState.Maximized;
+            Load += FrmLibros_Load;
             pnlTitulos.ResumeLayout(false);
             pnlTitulos.PerformLayout();
             pnlBusqueda.ResumeLayout(false);

@@ -37,7 +37,7 @@
             pnlDatos = new Panel();
             cmbEditorial = new ComboBox();
             cmbAutor = new ComboBox();
-            txtExsistencias = new TextBox();
+            txtExistencias = new TextBox();
             txtAño = new TextBox();
             txtCategoria = new TextBox();
             txtTitulo = new TextBox();
@@ -74,7 +74,6 @@
             pnlTitulos.Name = "pnlTitulos";
             pnlTitulos.Size = new Size(1059, 52);
             pnlTitulos.TabIndex = 0;
-            pnlTitulos.Paint += pnlTitulos_Paint;
             // 
             // lblTitulo
             // 
@@ -87,7 +86,6 @@
             lblTitulo.Size = new Size(272, 50);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Gestión de Libros";
-            lblTitulo.Click += lblTitulo_Click;
             // 
             // pnlBusqueda
             // 
@@ -111,6 +109,7 @@
             btnBuscar.TabIndex = 2;
             btnBuscar.Text = "Buscar";
             btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // txtBuscar
             // 
@@ -134,7 +133,7 @@
             // 
             pnlDatos.Controls.Add(cmbEditorial);
             pnlDatos.Controls.Add(cmbAutor);
-            pnlDatos.Controls.Add(txtExsistencias);
+            pnlDatos.Controls.Add(txtExistencias);
             pnlDatos.Controls.Add(txtAño);
             pnlDatos.Controls.Add(txtCategoria);
             pnlDatos.Controls.Add(txtTitulo);
@@ -171,13 +170,13 @@
             cmbAutor.Size = new Size(180, 23);
             cmbAutor.TabIndex = 14;
             // 
-            // txtExsistencias
+            // txtExistencias
             // 
-            txtExsistencias.Location = new Point(462, 264);
-            txtExsistencias.Margin = new Padding(3, 4, 3, 4);
-            txtExsistencias.Name = "txtExsistencias";
-            txtExsistencias.Size = new Size(186, 23);
-            txtExsistencias.TabIndex = 13;
+            txtExistencias.Location = new Point(462, 264);
+            txtExistencias.Margin = new Padding(3, 4, 3, 4);
+            txtExistencias.Name = "txtExistencias";
+            txtExistencias.Size = new Size(186, 23);
+            txtExistencias.TabIndex = 13;
             // 
             // txtAño
             // 
@@ -308,6 +307,7 @@
             btnNuevo.TabIndex = 5;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = false;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnCancelar
             // 
@@ -325,6 +325,7 @@
             btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
             // 
             // btnEliminar
             // 
@@ -341,6 +342,7 @@
             btnEliminar.TabIndex = 3;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnEditar
             // 
@@ -357,6 +359,7 @@
             btnEditar.TabIndex = 2;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnGuardar
             // 
@@ -373,6 +376,7 @@
             btnGuardar.TabIndex = 1;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // dgvLibros
             // 
@@ -382,6 +386,7 @@
             dgvLibros.Name = "dgvLibros";
             dgvLibros.Size = new Size(778, 260);
             dgvLibros.TabIndex = 4;
+            dgvLibros.CellDoubleClick += dgvLibros_CellDoubleClick;
             // 
             // FrmLibros
             // 
@@ -395,9 +400,9 @@
             Controls.Add(pnlTitulos);
             Margin = new Padding(3, 4, 3, 4);
             Name = "FrmLibros";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmLibros";
             WindowState = FormWindowState.Maximized;
-            Load += FrmLibros_Load;
             pnlTitulos.ResumeLayout(false);
             pnlTitulos.PerformLayout();
             pnlBusqueda.ResumeLayout(false);
@@ -427,9 +432,8 @@
         private TextBox txtAño;
         private TextBox txtCategoria;
         private TextBox txtTitulo;
-        private TextBox txtISBN;
         private Label lblExistencias;
-        private TextBox txtExsistencias;
+        private TextBox txtExistencias;
         private ComboBox cmbEditorial;
         private ComboBox cmbAutor;
 
@@ -444,5 +448,6 @@
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton iconButton1;
         private DataGridView dgvLibros;
+        private TextBox txtISBN;
     }
 }

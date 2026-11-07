@@ -1,3 +1,4 @@
+using Biblioteca_ACA_PA.ConexionDatos;
 using System.Security.Cryptography;
 
 namespace Biblioteca_ACA_PA
@@ -6,9 +7,10 @@ namespace Biblioteca_ACA_PA
     {
         public FrmPrincipal()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+
             AbrirFormulario(new FrmInicio());
-        }
+        }  
 
         private void AbrirFormulario(Form formulario)
         {

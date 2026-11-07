@@ -8,13 +8,19 @@ namespace Biblioteca_ACA_PA.ConexionDatos
 {
     public class Conexion
     {
-        private static string CadenaConexion = "Server=USUARIO;Database=Biblioteca-ACA-ProgramacionA;Integrated Security=True; TrustServerCertificate=True;";
-
         public SqlConnection ObtenerConexion()
         {
+            // Servidor por defecto 
+            string servidor = "Localhost";
 
-            return new SqlConnection(CadenaConexion);
+            // Si el proyecto se ejecuta en la PC del primer colaborador, usa su servidor
+            if (Environment.MachineName.Equals("Usuario", StringComparison.OrdinalIgnoreCase))
+            {
+                servidor = "USUARIO";
+            }
+
+            string cadenaConexion = $"Server={servidor};Database=Biblioteca-ACA-ProgramacionA;Integrated Security=True; TrustServerCertificate=True;";
+            return new SqlConnection(cadenaConexion);
         }
-
     }
 }

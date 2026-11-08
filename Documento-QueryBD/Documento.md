@@ -15,13 +15,13 @@
 ### Sistema de Gestión de Biblioteca
 
 **Presentado por:**\
-\[Laura ximena Bejarano Acosta y Claudith Beltran Landero\]
+Laura ximena Bejarano Acosta y Claudith Beltran Landero
 
 **Docente:**\
-\[Veronica Castro Munar\]
+Veronica Castro Munar
 
 **Fecha:**\
-\[Bogóta, 07, noviembre 2026\]
+Bogóta, 07, noviembre 2026
 
 ---------------------------------------------------------------------------
 
@@ -34,12 +34,11 @@ Avanzada**, aplicando Programación Orientada a Objetos, base de datos
 relacional, arquitectura por capas, operaciones CRUD, validaciones,
 manejo de excepciones y conexión con SQL Server.
 
-**Estudiante(s):** \[Laura ximena Bejarano Acosta y Claudith Beltran Landero\]\
-**Programa:** \[Ingenieria de sistemas\]\
-**Grupo:** \[Grupo\]\
-**Docente:** \[Veronica Castro Munar\]\
-**Institución:** \[Corporacion Unificada Nacional de la Edcucacion Superior - CUN\]\
-**Año:** \[2026\]
+**Estudiante(s):** Laura ximena Bejarano Acosta y Claudith Beltran Landero\
+**Grupo:** PROGRAMACION AVANZADA\
+**Docente:** Veronica Castro Munar\
+**Institución:** Corporacion Unificada Nacional de la Edcucacion Superior - CUN\
+**Año:** 2026
 
 ------------------------------------------------------------------------
 
@@ -248,3 +247,142 @@ graph LR
     Asistente --> CU04
     Asistente --> CU05
     Asistente --> CU06
+```
+## 5.3 Descripción de casos de uso
+
+### CU01 -- Gestionar libros
+
+**Actor principal:** Bibliotecario / Administrador
+
+**Descripción:** Permite registrar, consultar, actualizar, eliminar (desactivar) y buscar libros dentro del catálogo bibliográfico de la biblioteca.
+
+**Precondiciones:**
+- El usuario debe tener acceso al sistema mediante credenciales válidas y rol asignado.
+- Deben existir categorías, autores y editoriales previos cargados en la base de datos para asociar al libro.
+
+**Flujo principal:**
+1. El actor ingresa al módulo de gestión de libros desde el menú principal.
+2. El sistema despliega la lista actualizada de libros registrados desde la base de datos SQL Server.
+3. El actor selecciona la operación que desea realizar (crear, modificar, consultar o desactivar).
+4. El actor ingresa o edita la información del libro (Título, ISBN, Autor, Categoría, Editorial, Año de publicación y Stock).
+5. El sistema procesa la solicitud mediante la capa de negocio (BLL) y aplica las validaciones requeridas.
+6. El sistema guarda la transacción en SQL Server y muestra un mensaje en pantalla confirmando el resultado exitoso.
+
+**Flujos alternativos:**
+- **F-Alt 1 (Campos incompletos):** Si el actor deja campos requeridos vacíos (como ISBN o Título), el sistema cancela la operación y notifica al usuario los datos faltantes.
+- **F-Alt 2 (ISBN duplicado):** Si se intenta registrar un libro cuyo ISBN ya existe en SQL Server, el sistema cancela el guardado e informa que el código no puede repetirse.
+- **F-Alt 3 (Eliminación no permitida):** Si el libro posee préstamos vinculados activos o historial en el sistema, la aplicación bloquea el borrado físico y realiza una inactivación lógica.
+
+**Postcondiciones:**
+- El catálogo de libros queda guardado y actualizado en la base de datos SQL Server, disponible inmediatamente para préstamos y búsquedas.
+
+### CU02 -- Registrar préstamo
+
+**Actor principal:** Bibliotecario / Administrador / Asistente de biblioteca
+
+**Descripción:** Permite registrar la salida temporal de uno o varios ejemplares bibliográficos asignados a un usuario registrado en el sistema.
+
+**Precondiciones:**
+- El usuario debe estar previamente registrado en la base de datos y en estado "Activo" (sin sanciones pendientes).
+- El libro solicitado debe existir en el catálogo y contar con al menos una unidad disponible en el stock.
+
+**Flujo principal:**
+1. El actor ingresa al módulo de registro de préstamos.
+2. El actor busca y selecciona al usuario mediante su documento de identidad o código.
+3. El actor busca y selecciona el libro a prestar utilizando su título o código ISBN.
+4. El sistema verifica automáticamente el stock disponible y valida que el usuario no tenga mora ni exceda el límite de préstamos permitidos.
+5. El actor confirma la transacción y el sistema calcula la fecha límite de devolución.
+6. El sistema descuenta el stock disponible del libro, guarda el registro del préstamo en la base de datos de SQL Server y muestra un mensaje de confirmación en pantalla.
+
+**Flujos alternativos:**
+- **F-Alt 1 (Usuario inexistente o inactivo):** Si el usuario no se encuentra registrado o tiene el estado "Inactivo/Sancionado", el sistema deniega la operación y muestra una alerta notificando el impedimento.
+- **F-Alt 2 (Libro inexistente o sin stock):** Si el código del libro no existe o su stock actual es igual a cero, el sistema bloquea el registro e informa la indisponibilidad del ejemplar.
+- **F-Alt 3 (Límite de préstamos alcanzado):** Si el usuario ya posee el número máximo de libros prestados simultáneamente, el sistema cancela la operación indicando que debe devolver ejemplares antes de solicitar uno nuevo.
+
+**Postcondiciones:**
+- El préstamo queda registrado formalmente en la base de datos de SQL Server con estado "Activo".
+- El stock disponible del libro prestado se disminuye automáticamente.
+
+---
+
+### CU03 -- Registrar devolución
+
+**Actor principal:** Bibliotecario / Administrador / Asistente de biblioteca
+
+**Descripción:** Permite procesar el retorno de los libros prestados, verificando la fecha de entrega para aplicar sanciones o multas en caso de mora.
+
+**Precondiciones:**
+- Debe existir un registro de préstamo activo vinculado al usuario y al libro que se va a devolver.
+
+**Flujo principal:**
+1. El actor ingresa al módulo de devoluciones e ingresa el documento del usuario o el código del préstamo.
+2. El sistema busca y despliega la lista de préstamos activos correspondientes.
+3. El actor selecciona el préstamo o ejemplar que el usuario está entregando.
+4. El sistema compara la fecha actual con la fecha límite de devolución y calcula automáticamente si existen días de retraso.
+5. El sistema calcula el monto de la multa por mora en caso de aplicar, según la tarifa establecida.
+6. El actor confirma la recepción del ejemplar.
+7. El sistema incrementa el stock disponible del libro, actualiza el estado del préstamo a "Devuelto" en SQL Server y muestra el resumen de la entrega (con o sin penalización).
+
+**Flujos alternativos:**
+- **F-Alt 1 (Préstamo no encontrado):** Si el código ingresado no coincide con ningún préstamo en estado "Activo", el sistema muestra un aviso de error indicando que la devolución no puede procesarse.
+- **F-Alt 2 (Devolución con retraso / Generación de multa):** Si la fecha actual supera la fecha pactada, el sistema genera de forma implícita un registro de multa pendiente para el usuario y bloquea sus nuevos préstamos hasta que se gestione el pago.
+- **F-Alt 3 (Libro dañado o extraviado):** Si el ejemplar presenta deterioros severos al momento de la entrega, el actor puede marcarlo como "Dañado", lo cual excluye la unidad del stock activo y genera un cargo de reposición.
+
+**Postcondiciones:**
+- El estado del préstamo cambia a "Devuelto" (o "Devuelto con mora") en la base de datos de SQL Server.
+- El stock disponible del libro incrementa en 1 unidad en el inventario.
+
+# 6. DIAGRAMA DE CLASES
+
+## 6.1 Descripción
+
+El diagrama de clases representa la estructura estática del sistema de gestión de biblioteca (LMS), definiendo los modelos de dominio, sus atributos, métodos principales y las relaciones de asociación, agregación, composición y herencia entre las entidades. Esta estructura desvincula los datos procesados en la capa de interfaz gráfica (UI) de las capas de lógica de negocio (BLL) y acceso a datos (DAL).
+
+## 6.2 Diagrama de clases
+
+```mermaid
+classDiagram
+    class Usuarios {
+        +int IdUsuario
+        +string Nombre
+        +string Apellido
+        +string Documento
+        +string Telefono
+        +string Correo
+    }
+
+    class Prestamos {
+        +int IdPrestamo
+        +int IdUsuario
+        +string ISBN
+        +DateTime FechaPrestamo
+        +DateTime FechaDevolucion
+        +string Estado
+    }
+
+    class Libros {
+        +string ISBN
+        +string Titulo
+        +int IdAutor
+        +int IdEditorial
+        +string Categoria
+        +int Año
+        +int Existencias
+    }
+
+    class Autores {
+        +int IdAutor
+        +string Nombre
+        +string Apellido
+    }
+
+    class Editoriales {
+        +int IdEditorial
+        +string Nombre
+    }
+
+    Usuarios "1" -- "0..*" Prestamos : realiza
+    Libros "1" -- "0..*" Prestamos : contiene
+    Autores "1" -- "0..*" Libros : escribe
+    Editoriales "1" -- "0..*" Libros : publica
+    ```

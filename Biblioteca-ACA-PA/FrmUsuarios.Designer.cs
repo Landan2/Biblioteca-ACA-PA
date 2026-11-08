@@ -316,10 +316,9 @@
             btnGuardarU.ImageAlign = ContentAlignment.MiddleLeft;
             btnGuardarU.Location = new Point(203, 12);
             btnGuardarU.Name = "btnGuardarU";
-            btnGuardarU.Size = new Size(145, 32);
+            btnGuardarU.Size = new Size(123, 32);
             btnGuardarU.TabIndex = 1;
-            btnGuardarU.Text = "Guardar Usuario";
-            btnGuardarU.TextAlign = ContentAlignment.MiddleRight;
+            btnGuardarU.Text = "Guardar ";
             btnGuardarU.UseVisualStyleBackColor = false;
             btnGuardarU.Click += btnGuardarU_Click;
             // 
@@ -345,6 +344,7 @@
             // dgvUsuarios
             // 
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.Cursor = Cursors.Hand;
             dgvUsuarios.Location = new Point(161, 435);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.Size = new Size(778, 184);

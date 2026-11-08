@@ -382,6 +382,7 @@
             // 
             dgvLibros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLibros.Cursor = Cursors.Hand;
             dgvLibros.Location = new Point(167, 470);
             dgvLibros.Name = "dgvLibros";
             dgvLibros.Size = new Size(778, 260);

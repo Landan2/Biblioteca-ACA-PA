@@ -65,14 +65,14 @@
             // 
             // pnlTitulos
             // 
-            pnlTitulos.BackColor = Color.LightGray;
+            pnlTitulos.BackColor = Color.Gainsboro;
             pnlTitulos.Controls.Add(lblTitulo);
             pnlTitulos.Dock = DockStyle.Top;
             pnlTitulos.ForeColor = SystemColors.ControlText;
             pnlTitulos.Location = new Point(0, 0);
             pnlTitulos.Margin = new Padding(3, 4, 3, 4);
             pnlTitulos.Name = "pnlTitulos";
-            pnlTitulos.Size = new Size(1059, 52);
+            pnlTitulos.Size = new Size(1059, 58);
             pnlTitulos.TabIndex = 0;
             // 
             // lblTitulo
@@ -80,8 +80,8 @@
             lblTitulo.AutoSize = true;
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Sitka Banner", 26.2499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.ActiveCaptionText;
-            lblTitulo.Location = new Point(414, 2);
+            lblTitulo.ForeColor = Color.Maroon;
+            lblTitulo.Location = new Point(407, 2);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(272, 50);
             lblTitulo.TabIndex = 0;
@@ -94,7 +94,7 @@
             pnlBusqueda.Controls.Add(txtBuscar);
             pnlBusqueda.Controls.Add(lblBuscar);
             pnlBusqueda.Dock = DockStyle.Top;
-            pnlBusqueda.Location = new Point(0, 52);
+            pnlBusqueda.Location = new Point(0, 58);
             pnlBusqueda.Margin = new Padding(3, 4, 3, 4);
             pnlBusqueda.Name = "pnlBusqueda";
             pnlBusqueda.Size = new Size(1059, 49);
@@ -102,6 +102,7 @@
             // 
             // btnBuscar
             // 
+            btnBuscar.ForeColor = Color.DarkRed;
             btnBuscar.Location = new Point(671, 14);
             btnBuscar.Margin = new Padding(3, 4, 3, 4);
             btnBuscar.Name = "btnBuscar";
@@ -123,6 +124,7 @@
             // 
             lblBuscar.AutoSize = true;
             lblBuscar.Font = new Font("Sitka Text", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBuscar.ForeColor = Color.DarkRed;
             lblBuscar.Location = new Point(357, 14);
             lblBuscar.Name = "lblBuscar";
             lblBuscar.Size = new Size(86, 19);
@@ -131,6 +133,7 @@
             // 
             // pnlDatos
             // 
+            pnlDatos.BackColor = Color.WhiteSmoke;
             pnlDatos.Controls.Add(cmbEditorial);
             pnlDatos.Controls.Add(cmbAutor);
             pnlDatos.Controls.Add(txtExistencias);
@@ -146,7 +149,7 @@
             pnlDatos.Controls.Add(lblTituloLibro);
             pnlDatos.Controls.Add(lblISBN);
             pnlDatos.Dock = DockStyle.Top;
-            pnlDatos.Location = new Point(0, 101);
+            pnlDatos.Location = new Point(0, 107);
             pnlDatos.Margin = new Padding(3, 4, 3, 4);
             pnlDatos.Name = "pnlDatos";
             pnlDatos.Size = new Size(1059, 296);
@@ -296,14 +299,15 @@
             // 
             btnNuevo.BackColor = Color.WhiteSmoke;
             btnNuevo.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnNuevo.ForeColor = Color.Black;
             btnNuevo.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
-            btnNuevo.IconColor = Color.Black;
+            btnNuevo.IconColor = Color.Maroon;
             btnNuevo.IconFont = FontAwesome.Sharp.IconFont.Regular;
             btnNuevo.IconSize = 25;
             btnNuevo.ImageAlign = ContentAlignment.MiddleLeft;
             btnNuevo.Location = new Point(43, 10);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(127, 40);
+            btnNuevo.Size = new Size(115, 40);
             btnNuevo.TabIndex = 5;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = false;
@@ -381,6 +385,8 @@
             // dgvLibros
             // 
             dgvLibros.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvLibros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvLibros.BackgroundColor = Color.Silver;
             dgvLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvLibros.Cursor = Cursors.Hand;
             dgvLibros.Location = new Point(167, 470);

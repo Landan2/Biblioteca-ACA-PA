@@ -55,22 +55,23 @@
             // 
             // pnlAutores
             // 
-            pnlAutores.BackColor = Color.LightGray;
+            pnlAutores.BackColor = Color.Gainsboro;
             pnlAutores.Controls.Add(lblAutores);
             pnlAutores.Dock = DockStyle.Top;
             pnlAutores.Location = new Point(0, 0);
             pnlAutores.Name = "pnlAutores";
-            pnlAutores.Size = new Size(1059, 48);
+            pnlAutores.Size = new Size(1059, 61);
             pnlAutores.TabIndex = 0;
             // 
             // lblAutores
             // 
             lblAutores.AutoSize = true;
-            lblAutores.BackColor = Color.LightGray;
-            lblAutores.Font = new Font("Sitka Heading", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAutores.Location = new Point(434, 9);
+            lblAutores.BackColor = Color.Transparent;
+            lblAutores.Font = new Font("Sitka Heading", 26.2499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAutores.ForeColor = Color.Maroon;
+            lblAutores.Location = new Point(404, 8);
             lblAutores.Name = "lblAutores";
-            lblAutores.Size = new Size(219, 35);
+            lblAutores.Size = new Size(314, 50);
             lblAutores.TabIndex = 0;
             lblAutores.Text = "Gestión de Autores";
             lblAutores.TextAlign = ContentAlignment.MiddleCenter;
@@ -82,7 +83,7 @@
             pnlBuscarA.Controls.Add(txtBuscarA);
             pnlBuscarA.Controls.Add(lblBuscaarA);
             pnlBuscarA.Dock = DockStyle.Top;
-            pnlBuscarA.Location = new Point(0, 48);
+            pnlBuscarA.Location = new Point(0, 61);
             pnlBuscarA.Name = "pnlBuscarA";
             pnlBuscarA.Size = new Size(1059, 58);
             pnlBuscarA.TabIndex = 1;
@@ -90,6 +91,7 @@
             // btnBuscarA
             // 
             btnBuscarA.AutoSize = true;
+            btnBuscarA.ForeColor = Color.DarkRed;
             btnBuscarA.Location = new Point(675, 15);
             btnBuscarA.Name = "btnBuscarA";
             btnBuscarA.Size = new Size(81, 31);
@@ -110,6 +112,7 @@
             // 
             lblBuscaarA.AutoSize = true;
             lblBuscaarA.Font = new Font("Sitka Banner", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBuscaarA.ForeColor = Color.DarkRed;
             lblBuscaarA.Location = new Point(364, 16);
             lblBuscaarA.Name = "lblBuscaarA";
             lblBuscaarA.Size = new Size(64, 23);
@@ -125,15 +128,15 @@
             pnlCargarA.Controls.Add(lblApellidoA);
             pnlCargarA.Controls.Add(lblNombreA);
             pnlCargarA.Dock = DockStyle.Top;
-            pnlCargarA.Location = new Point(0, 106);
+            pnlCargarA.Location = new Point(0, 119);
             pnlCargarA.Name = "pnlCargarA";
-            pnlCargarA.Size = new Size(1059, 172);
+            pnlCargarA.Size = new Size(1059, 159);
             pnlCargarA.TabIndex = 2;
             // 
             // txtApellidoA
             // 
             txtApellidoA.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtApellidoA.Location = new Point(465, 77);
+            txtApellidoA.Location = new Point(463, 86);
             txtApellidoA.Name = "txtApellidoA";
             txtApellidoA.Size = new Size(175, 26);
             txtApellidoA.TabIndex = 3;
@@ -141,7 +144,7 @@
             // txtNombreA
             // 
             txtNombreA.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreA.Location = new Point(465, 24);
+            txtNombreA.Location = new Point(463, 33);
             txtNombreA.Name = "txtNombreA";
             txtNombreA.Size = new Size(175, 26);
             txtNombreA.TabIndex = 2;
@@ -150,7 +153,7 @@
             // 
             lblApellidoA.AutoSize = true;
             lblApellidoA.Font = new Font("Sitka Banner", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblApellidoA.Location = new Point(361, 82);
+            lblApellidoA.Location = new Point(359, 91);
             lblApellidoA.Name = "lblApellidoA";
             lblApellidoA.Size = new Size(67, 23);
             lblApellidoA.TabIndex = 2;
@@ -161,7 +164,7 @@
             // 
             lblNombreA.AutoSize = true;
             lblNombreA.Font = new Font("Sitka Banner", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNombreA.Location = new Point(361, 29);
+            lblNombreA.Location = new Point(359, 38);
             lblNombreA.Name = "lblNombreA";
             lblNombreA.Size = new Size(69, 23);
             lblNombreA.TabIndex = 1;
@@ -257,7 +260,7 @@
             btnNuevoA.BackColor = Color.WhiteSmoke;
             btnNuevoA.FlatStyle = FlatStyle.Flat;
             btnNuevoA.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
-            btnNuevoA.IconColor = Color.Black;
+            btnNuevoA.IconColor = Color.DarkRed;
             btnNuevoA.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNuevoA.IconSize = 25;
             btnNuevoA.ImageAlign = ContentAlignment.MiddleLeft;
@@ -272,10 +275,13 @@
             // 
             // dgvAutores
             // 
+            dgvAutores.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvAutores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvAutores.BackgroundColor = Color.Silver;
             dgvAutores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAutores.Location = new Point(200, 356);
+            dgvAutores.Location = new Point(163, 356);
             dgvAutores.Name = "dgvAutores";
-            dgvAutores.Size = new Size(649, 275);
+            dgvAutores.Size = new Size(735, 344);
             dgvAutores.TabIndex = 4;
             dgvAutores.CellDoubleClick += dgvAutores_CellDoubleClick;
             // 

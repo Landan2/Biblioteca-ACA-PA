@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             pnlMenu = new Panel();
             btnSalir = new FontAwesome.Sharp.IconButton();
             btnReportes = new FontAwesome.Sharp.IconButton();
@@ -52,7 +51,7 @@
             // 
             // pnlMenu
             // 
-            pnlMenu.BackColor = Color.DarkGray;
+            pnlMenu.BackColor = Color.Gainsboro;
             pnlMenu.Controls.Add(btnSalir);
             pnlMenu.Controls.Add(btnReportes);
             pnlMenu.Controls.Add(btnPrestamos);
@@ -72,7 +71,7 @@
             // btnSalir
             // 
             btnSalir.AutoSize = true;
-            btnSalir.BackColor = Color.WhiteSmoke;
+            btnSalir.BackColor = Color.Gainsboro;
             btnSalir.Dock = DockStyle.Top;
             btnSalir.FlatAppearance.BorderSize = 0;
             btnSalir.FlatStyle = FlatStyle.Flat;
@@ -96,7 +95,7 @@
             // btnReportes
             // 
             btnReportes.AutoSize = true;
-            btnReportes.BackColor = Color.WhiteSmoke;
+            btnReportes.BackColor = Color.Gainsboro;
             btnReportes.Dock = DockStyle.Top;
             btnReportes.FlatAppearance.BorderSize = 0;
             btnReportes.FlatStyle = FlatStyle.Flat;
@@ -120,7 +119,7 @@
             // btnPrestamos
             // 
             btnPrestamos.AutoSize = true;
-            btnPrestamos.BackColor = Color.WhiteSmoke;
+            btnPrestamos.BackColor = Color.Gainsboro;
             btnPrestamos.Dock = DockStyle.Top;
             btnPrestamos.FlatAppearance.BorderSize = 0;
             btnPrestamos.FlatStyle = FlatStyle.Flat;
@@ -144,7 +143,7 @@
             // btnEditoriales
             // 
             btnEditoriales.AutoSize = true;
-            btnEditoriales.BackColor = Color.WhiteSmoke;
+            btnEditoriales.BackColor = Color.Gainsboro;
             btnEditoriales.Dock = DockStyle.Top;
             btnEditoriales.FlatAppearance.BorderSize = 0;
             btnEditoriales.FlatStyle = FlatStyle.Flat;
@@ -168,7 +167,7 @@
             // btnAutores
             // 
             btnAutores.AutoSize = true;
-            btnAutores.BackColor = Color.WhiteSmoke;
+            btnAutores.BackColor = Color.Gainsboro;
             btnAutores.Dock = DockStyle.Top;
             btnAutores.FlatAppearance.BorderSize = 0;
             btnAutores.FlatStyle = FlatStyle.Flat;
@@ -192,7 +191,7 @@
             // btnUsuarios
             // 
             btnUsuarios.AutoSize = true;
-            btnUsuarios.BackColor = Color.WhiteSmoke;
+            btnUsuarios.BackColor = Color.Gainsboro;
             btnUsuarios.Dock = DockStyle.Top;
             btnUsuarios.FlatAppearance.BorderSize = 0;
             btnUsuarios.FlatStyle = FlatStyle.Flat;
@@ -216,7 +215,7 @@
             // btnLibros
             // 
             btnLibros.AutoSize = true;
-            btnLibros.BackColor = Color.WhiteSmoke;
+            btnLibros.BackColor = Color.Gainsboro;
             btnLibros.Cursor = Cursors.Hand;
             btnLibros.Dock = DockStyle.Top;
             btnLibros.FlatAppearance.BorderSize = 0;
@@ -241,7 +240,7 @@
             // btnInicio
             // 
             btnInicio.AutoSize = true;
-            btnInicio.BackColor = Color.WhiteSmoke;
+            btnInicio.BackColor = Color.Gainsboro;
             btnInicio.Cursor = Cursors.Hand;
             btnInicio.Dock = DockStyle.Top;
             btnInicio.FlatAppearance.BorderSize = 0;
@@ -265,7 +264,7 @@
             // 
             // pnlLogo
             // 
-            pnlLogo.BackColor = Color.Black;
+            pnlLogo.BackColor = Color.Gainsboro;
             pnlLogo.Controls.Add(picLogo);
             pnlLogo.Controls.Add(lblSubtitulo);
             pnlLogo.Controls.Add(lblTitulo);
@@ -280,7 +279,6 @@
             // 
             picLogo.BackColor = Color.DarkGray;
             picLogo.BackgroundImageLayout = ImageLayout.Zoom;
-            picLogo.Image = (Image)resources.GetObject("picLogo.Image");
             picLogo.Location = new Point(3, 3);
             picLogo.Margin = new Padding(3, 4, 3, 4);
             picLogo.Name = "picLogo";
@@ -292,22 +290,22 @@
             // lblSubtitulo
             // 
             lblSubtitulo.AutoSize = true;
-            lblSubtitulo.BackColor = Color.Maroon;
-            lblSubtitulo.Font = new Font("Sitka Heading", 11.249999F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            lblSubtitulo.ForeColor = SystemColors.ButtonShadow;
-            lblSubtitulo.Location = new Point(120, 45);
+            lblSubtitulo.BackColor = Color.Transparent;
+            lblSubtitulo.Font = new Font("Sitka Heading", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblSubtitulo.ForeColor = Color.Maroon;
+            lblSubtitulo.Location = new Point(134, 45);
             lblSubtitulo.Name = "lblSubtitulo";
-            lblSubtitulo.Size = new Size(137, 21);
+            lblSubtitulo.Size = new Size(142, 23);
             lblSubtitulo.TabIndex = 1;
             lblSubtitulo.Text = "Sistema de Gestión";
             // 
             // lblTitulo
             // 
             lblTitulo.AutoSize = true;
-            lblTitulo.BackColor = Color.Maroon;
+            lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Sitka Heading", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.ForeColor = SystemColors.ActiveCaptionText;
-            lblTitulo.Location = new Point(120, 3);
+            lblTitulo.ForeColor = Color.Maroon;
+            lblTitulo.Location = new Point(117, 3);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(180, 42);
             lblTitulo.TabIndex = 0;
@@ -315,7 +313,7 @@
             // 
             // pnlSuperior
             // 
-            pnlSuperior.BackColor = SystemColors.ActiveBorder;
+            pnlSuperior.BackColor = Color.DarkGray;
             pnlSuperior.Dock = DockStyle.Top;
             pnlSuperior.Location = new Point(300, 0);
             pnlSuperior.Margin = new Padding(3, 4, 3, 4);
@@ -325,7 +323,7 @@
             // 
             // pnlEstado
             // 
-            pnlEstado.BackColor = SystemColors.ScrollBar;
+            pnlEstado.BackColor = Color.LightGray;
             pnlEstado.Dock = DockStyle.Bottom;
             pnlEstado.Location = new Point(300, 724);
             pnlEstado.Margin = new Padding(3, 4, 3, 4);
@@ -335,7 +333,7 @@
             // 
             // pnlContenido
             // 
-            pnlContenido.BackColor = SystemColors.GradientActiveCaption;
+            pnlContenido.BackColor = Color.WhiteSmoke;
             pnlContenido.Dock = DockStyle.Fill;
             pnlContenido.Location = new Point(300, 33);
             pnlContenido.Margin = new Padding(3, 4, 3, 4);

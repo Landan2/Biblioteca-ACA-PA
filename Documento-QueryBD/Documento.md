@@ -34,7 +34,7 @@ Avanzada**, aplicando Programación Orientada a Objetos, base de datos
 relacional, arquitectura por capas, operaciones CRUD, validaciones,
 manejo de excepciones y conexión con SQL Server.
 
-**Estudiante(s):** \[Laura / Claudith\]\
+**Estudiante(s):** \[Laura ximena Bejarano Acosta y Claudith Beltran Landero\]
 **Programa:** \[Ingenieria de sistemas\]\
 **Grupo:** \[Grupo\]\
 **Docente:** \[Veronica Castro Munar\]\

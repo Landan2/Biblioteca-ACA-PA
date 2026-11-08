@@ -109,9 +109,10 @@
             // lblBuscaarA
             // 
             lblBuscaarA.AutoSize = true;
-            lblBuscaarA.Location = new Point(364, 21);
+            lblBuscaarA.Font = new Font("Sitka Banner", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBuscaarA.Location = new Point(364, 16);
             lblBuscaarA.Name = "lblBuscaarA";
-            lblBuscaarA.Size = new Size(59, 21);
+            lblBuscaarA.Size = new Size(64, 23);
             lblBuscaarA.TabIndex = 0;
             lblBuscaarA.Text = "Id Autor";
             lblBuscaarA.TextAlign = ContentAlignment.MiddleCenter;
@@ -126,13 +127,13 @@
             pnlCargarA.Dock = DockStyle.Top;
             pnlCargarA.Location = new Point(0, 106);
             pnlCargarA.Name = "pnlCargarA";
-            pnlCargarA.Size = new Size(1059, 208);
+            pnlCargarA.Size = new Size(1059, 172);
             pnlCargarA.TabIndex = 2;
             // 
             // txtApellidoA
             // 
             txtApellidoA.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtApellidoA.Location = new Point(464, 101);
+            txtApellidoA.Location = new Point(465, 77);
             txtApellidoA.Name = "txtApellidoA";
             txtApellidoA.Size = new Size(175, 26);
             txtApellidoA.TabIndex = 3;
@@ -140,7 +141,7 @@
             // txtNombreA
             // 
             txtNombreA.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreA.Location = new Point(464, 48);
+            txtNombreA.Location = new Point(465, 24);
             txtNombreA.Name = "txtNombreA";
             txtNombreA.Size = new Size(175, 26);
             txtNombreA.TabIndex = 2;
@@ -148,9 +149,10 @@
             // lblApellidoA
             // 
             lblApellidoA.AutoSize = true;
-            lblApellidoA.Location = new Point(360, 106);
+            lblApellidoA.Font = new Font("Sitka Banner", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblApellidoA.Location = new Point(361, 82);
             lblApellidoA.Name = "lblApellidoA";
-            lblApellidoA.Size = new Size(63, 21);
+            lblApellidoA.Size = new Size(67, 23);
             lblApellidoA.TabIndex = 2;
             lblApellidoA.Text = "Apellido:";
             lblApellidoA.TextAlign = ContentAlignment.MiddleCenter;
@@ -158,9 +160,10 @@
             // lblNombreA
             // 
             lblNombreA.AutoSize = true;
-            lblNombreA.Location = new Point(360, 53);
+            lblNombreA.Font = new Font("Sitka Banner", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNombreA.Location = new Point(361, 29);
             lblNombreA.Name = "lblNombreA";
-            lblNombreA.Size = new Size(62, 21);
+            lblNombreA.Size = new Size(69, 23);
             lblNombreA.TabIndex = 1;
             lblNombreA.Text = "Nombre:";
             lblNombreA.TextAlign = ContentAlignment.MiddleCenter;
@@ -172,7 +175,7 @@
             pnlBotonesA.Controls.Add(btnEditarA);
             pnlBotonesA.Controls.Add(btnGuardarA);
             pnlBotonesA.Controls.Add(btnNuevoA);
-            pnlBotonesA.Location = new Point(104, 320);
+            pnlBotonesA.Location = new Point(103, 284);
             pnlBotonesA.Name = "pnlBotonesA";
             pnlBotonesA.Size = new Size(893, 66);
             pnlBotonesA.TabIndex = 3;
@@ -270,7 +273,7 @@
             // dgvAutores
             // 
             dgvAutores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAutores.Location = new Point(202, 392);
+            dgvAutores.Location = new Point(200, 356);
             dgvAutores.Name = "dgvAutores";
             dgvAutores.Size = new Size(649, 275);
             dgvAutores.TabIndex = 4;

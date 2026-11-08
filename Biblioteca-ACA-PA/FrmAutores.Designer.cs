@@ -34,7 +34,7 @@
             btnBuscarA = new Button();
             txtBuscarA = new TextBox();
             lblBuscaarA = new Label();
-            pnlCargarA = new Panel();
+            pnlDatosA = new Panel();
             txtApellidoA = new TextBox();
             txtNombreA = new TextBox();
             lblApellidoA = new Label();
@@ -48,7 +48,7 @@
             dgvAutores = new DataGridView();
             pnlAutores.SuspendLayout();
             pnlBuscarA.SuspendLayout();
-            pnlCargarA.SuspendLayout();
+            pnlDatosA.SuspendLayout();
             pnlBotonesA.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAutores).BeginInit();
             SuspendLayout();
@@ -120,18 +120,18 @@
             lblBuscaarA.Text = "Id Autor";
             lblBuscaarA.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // pnlCargarA
+            // pnlDatosA
             // 
-            pnlCargarA.BackColor = Color.WhiteSmoke;
-            pnlCargarA.Controls.Add(txtApellidoA);
-            pnlCargarA.Controls.Add(txtNombreA);
-            pnlCargarA.Controls.Add(lblApellidoA);
-            pnlCargarA.Controls.Add(lblNombreA);
-            pnlCargarA.Dock = DockStyle.Top;
-            pnlCargarA.Location = new Point(0, 119);
-            pnlCargarA.Name = "pnlCargarA";
-            pnlCargarA.Size = new Size(1059, 159);
-            pnlCargarA.TabIndex = 2;
+            pnlDatosA.BackColor = Color.WhiteSmoke;
+            pnlDatosA.Controls.Add(txtApellidoA);
+            pnlDatosA.Controls.Add(txtNombreA);
+            pnlDatosA.Controls.Add(lblApellidoA);
+            pnlDatosA.Controls.Add(lblNombreA);
+            pnlDatosA.Dock = DockStyle.Top;
+            pnlDatosA.Location = new Point(0, 119);
+            pnlDatosA.Name = "pnlDatosA";
+            pnlDatosA.Size = new Size(1059, 159);
+            pnlDatosA.TabIndex = 2;
             // 
             // txtApellidoA
             // 
@@ -292,7 +292,7 @@
             ClientSize = new Size(1059, 749);
             Controls.Add(dgvAutores);
             Controls.Add(pnlBotonesA);
-            Controls.Add(pnlCargarA);
+            Controls.Add(pnlDatosA);
             Controls.Add(pnlBuscarA);
             Controls.Add(pnlAutores);
             Font = new Font("Sitka Banner Semibold", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -305,8 +305,8 @@
             pnlAutores.PerformLayout();
             pnlBuscarA.ResumeLayout(false);
             pnlBuscarA.PerformLayout();
-            pnlCargarA.ResumeLayout(false);
-            pnlCargarA.PerformLayout();
+            pnlDatosA.ResumeLayout(false);
+            pnlDatosA.PerformLayout();
             pnlBotonesA.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvAutores).EndInit();
             ResumeLayout(false);
@@ -316,7 +316,7 @@
 
         private Panel pnlAutores;
         private Panel pnlBuscarA;
-        private Panel pnlCargarA;
+        private Panel pnlDatosA;
         private Panel pnlBotonesA;
         private Label lblAutores;
         private Label lblBuscaarA;

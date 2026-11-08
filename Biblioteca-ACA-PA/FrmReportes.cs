@@ -28,6 +28,7 @@ namespace Biblioteca_ACA_PA
             cmbTipoReporte.Items.Add("Préstamos activos");
             cmbTipoReporte.Items.Add("Préstamos devueltos");
             cmbTipoReporte.Items.Add("Inventario de libros");
+            cmbTipoReporte.Items.Add("Usuarios Registrados"); 
 
             cmbTipoReporte.SelectedIndex = -1;
 
@@ -109,6 +110,21 @@ namespace Biblioteca_ACA_PA
                              INNER JOIN Editoriales e
                                 ON l.IdEditorial = e.IdEditorial
                              ORDER BY l.Titulo";
+                    }
+                    else if (cmbTipoReporte.Text == "Usuarios Registrados")
+                    {
+
+
+                        consulta = @"SELECT
+
+                                    IdUsuario, 
+                                    Nombre + ' ' + Apellido as Usuario,
+                                    Telefono,
+                                    Correo
+                                    FROM Usuarios
+                                    ORDER BY Nombre ASC";
+
+
                     }
 
                     using (SqlDataAdapter adaptador =

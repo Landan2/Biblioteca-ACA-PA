@@ -61,26 +61,28 @@
             // 
             // pnlUsuarios
             // 
-            pnlUsuarios.BackColor = Color.LightGray;
+            pnlUsuarios.BackColor = Color.Gainsboro;
             pnlUsuarios.Controls.Add(lblUsuarios);
             pnlUsuarios.Dock = DockStyle.Top;
             pnlUsuarios.Location = new Point(0, 0);
             pnlUsuarios.Name = "pnlUsuarios";
-            pnlUsuarios.Size = new Size(1083, 48);
+            pnlUsuarios.Size = new Size(1083, 58);
             pnlUsuarios.TabIndex = 0;
             // 
             // lblUsuarios
             // 
             lblUsuarios.AutoSize = true;
-            lblUsuarios.Font = new Font("Sitka Text Semibold", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsuarios.Location = new Point(398, 9);
+            lblUsuarios.Font = new Font("Sitka Display", 26.2499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUsuarios.ForeColor = Color.Maroon;
+            lblUsuarios.Location = new Point(388, 5);
             lblUsuarios.Name = "lblUsuarios";
-            lblUsuarios.Size = new Size(251, 35);
+            lblUsuarios.Size = new Size(322, 50);
             lblUsuarios.TabIndex = 0;
             lblUsuarios.Text = "Gestión De Usuarios";
             // 
             // pnlCargarUsuarios
             // 
+            pnlCargarUsuarios.BackColor = Color.WhiteSmoke;
             pnlCargarUsuarios.Controls.Add(pnlBuscarU);
             pnlCargarUsuarios.Controls.Add(txtCorreo);
             pnlCargarUsuarios.Controls.Add(txtTelefono);
@@ -93,7 +95,7 @@
             pnlCargarUsuarios.Controls.Add(lblApellido);
             pnlCargarUsuarios.Controls.Add(lblNombre);
             pnlCargarUsuarios.Dock = DockStyle.Top;
-            pnlCargarUsuarios.Location = new Point(0, 48);
+            pnlCargarUsuarios.Location = new Point(0, 58);
             pnlCargarUsuarios.Name = "pnlCargarUsuarios";
             pnlCargarUsuarios.Size = new Size(1083, 317);
             pnlCargarUsuarios.TabIndex = 1;
@@ -120,8 +122,9 @@
             // 
             // btnBuscarU
             // 
-            btnBuscarU.Font = new Font("Sitka Text", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnBuscarU.Location = new Point(667, 15);
+            btnBuscarU.Font = new Font("Sitka Display", 9.749999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBuscarU.ForeColor = Color.DarkRed;
+            btnBuscarU.Location = new Point(665, 14);
             btnBuscarU.Name = "btnBuscarU";
             btnBuscarU.Size = new Size(79, 26);
             btnBuscarU.TabIndex = 12;
@@ -133,6 +136,7 @@
             // 
             lblBuscarU.AutoSize = true;
             lblBuscarU.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBuscarU.ForeColor = Color.DarkRed;
             lblBuscarU.Location = new Point(297, 13);
             lblBuscarU.Name = "lblBuscarU";
             lblBuscarU.Size = new Size(80, 21);
@@ -228,6 +232,7 @@
             // 
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNombre.ForeColor = Color.Black;
             lblNombre.Location = new Point(299, 79);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(64, 21);
@@ -242,9 +247,9 @@
             pnlBotonesU.Controls.Add(btnEditarU);
             pnlBotonesU.Controls.Add(btnGuardarU);
             pnlBotonesU.Controls.Add(btnNuevoU);
-            pnlBotonesU.Location = new Point(118, 371);
+            pnlBotonesU.Location = new Point(118, 381);
             pnlBotonesU.Name = "pnlBotonesU";
-            pnlBotonesU.Size = new Size(874, 58);
+            pnlBotonesU.Size = new Size(874, 48);
             pnlBotonesU.TabIndex = 2;
             // 
             // btnCancelarU
@@ -328,7 +333,7 @@
             btnNuevoU.Cursor = Cursors.Hand;
             btnNuevoU.Font = new Font("Sitka Text", 9.749999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnNuevoU.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            btnNuevoU.IconColor = Color.Black;
+            btnNuevoU.IconColor = Color.DarkRed;
             btnNuevoU.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNuevoU.IconSize = 25;
             btnNuevoU.ImageAlign = ContentAlignment.MiddleLeft;
@@ -343,11 +348,13 @@
             // 
             // dgvUsuarios
             // 
+            dgvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvUsuarios.BackgroundColor = Color.Silver;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsuarios.Cursor = Cursors.Hand;
             dgvUsuarios.Location = new Point(161, 435);
             dgvUsuarios.Name = "dgvUsuarios";
-            dgvUsuarios.Size = new Size(778, 184);
+            dgvUsuarios.Size = new Size(778, 199);
             dgvUsuarios.TabIndex = 3;
             dgvUsuarios.CellDoubleClick += dgvUsuarios_CellDoubleClick;
             // 

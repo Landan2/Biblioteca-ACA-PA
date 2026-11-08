@@ -342,47 +342,231 @@ El diagrama de clases representa la estructura estática del sistema de gestión
 
 ```mermaid
 classDiagram
-    class Usuarios {
-        +int IdUsuario
-        +string Nombre
-        +string Apellido
-        +string Documento
-        +string Telefono
-        +string Correo
+    class AUTORES {
+        +int IdAutor
+        +Varchar 100 Nombre
+        +Varchar 100 Apellido
     }
 
-    class Prestamos {
-        +int IdPrestamo
-        +int IdUsuario
-        +string ISBN
-        +DateTime FechaPrestamo
-        +DateTime FechaDevolucion
-        +string Estado
+    class EDITORIALES {
+        +int IdEditorial
+        +Varchar 150 Nombre
     }
 
-    class Libros {
-        +string ISBN
-        +string Titulo
+    class LIBROS {
+        +Varchar 20 ISBN
+        +Varchar 200 Titulo
         +int IdAutor
         +int IdEditorial
-        +string Categoria
+        +Varchar 100 Categoria
         +int Año
         +int Existencias
     }
 
-    class Autores {
-        +int IdAutor
-        +string Nombre
-        +string Apellido
+    class USUARIOS {
+        +int IdUsuario
+        +Varchar 100 Nombre
+        +Varchar 100 Apellido
+        +Varchar 30 Documento
+        +Varchar 30 Telefono
+        +Varchar 150 Correo
     }
 
-    class Editoriales {
-        +int IdEditorial
-        +string Nombre
+    class PRESTAMOS {
+        +int IdPrestamo
+        +int IdUsuario
+        +Varchar 20 ISBN
+        +Date FechaPrestamo
+        +Date FechaDevolucion
+        +Varchar 20 Estado
     }
 
-    Usuarios "1" -- "0..*" Prestamos : realiza
-    Libros "1" -- "0..*" Prestamos : contiene
-    Autores "1" -- "0..*" Libros : escribe
-    Editoriales "1" -- "0..*" Libros : publica
-    ```
+    AUTORES "1" --> "0..*" LIBROS : escribe
+    EDITORIALES "1" --> "0..*" LIBROS : publica
+    USUARIOS "1" --> "0..*" PRESTAMOS : realiza
+    LIBROS "1" --> "0..*" PRESTAMOS : se presta
+```
+## 6.3 Principales clases
+
+| Clase | Responsabilidad |
+| :--- | :--- |
+| **Libros** | Representar y gestionar la información del catálogo bibliográfico y sus existencias (ISBN, Título, Categoría, Año, Existencias). |
+| **Autores** | Representar y gestionar la información de los autores registrados en la base de datos (IdAutor, Nombre, Apellido). |
+| **Editoriales** | Representar y gestionar las casas editoriales publicadoras (IdEditorial, Nombre). |
+| **Usuarios** | Representar los datos personales de los lectores habilitados para realizar préstamos (IdUsuario, Nombre, Apellido, Documento, Teléfono, Correo). |
+| **Prestamos** | Gestionar las transacciones de préstamo, fechas de salida/devolución y control de estado de la entrega (IdPrestamo, IdUsuario, ISBN, FechaPrestamo, FechaDevolucion, Estado). |
+
+## 6.4 Aplicación de POO
+
+En el desarrollo del sistema en C# se aplicaron los siguientes principios y conceptos de la Programación Orientada a Objetos:
+
+- **Clases:** Se crearon plantillas o modelos conceptuales en la capa de entidades (`Entities`) para estructurar los datos del sistema (`Usuarios`, `Prestamos`, `Libros`, `Autores`, `Editoriales`).
+- **Objetos:** Se instancian en memoria desde los formularios WinForms para manipular la información procesada por la lógica de negocio antes de ser enviada a SQL Server.
+- **Constructores:** Se implementaron constructores por defecto y parametrizados para instanciar objetos asignando valores iniciales directamente desde los registros cargados de la base de datos.
+- **Métodos:** Se definieron métodos de acción y validación dentro de las clases de negocio (ej. `ValidarExistencias()`, `RegistrarPrestamo()`, `CalcularFechaDevolucion()`).
+- **Propiedades:** Se utilizaron propiedades auto-implementadas con accesores `get` y `set` para exponer los valores de cada atributo de forma estructurada.
+- **Encapsulamiento:** Se protegió el acceso directo a las variables internas definiendo modificadores de acceso (`private` / `public`), garantizando que la modificación de datos pase obligatoriamente por la capa de negocio (BLL).
+- **Colecciones:** Uso de listas genéricas (`List<Libros>`, `List<Prestamos>`) para manipular conjuntos de datos en memoria y alimentar las listas desplegables y controles `DataGridView` de la interfaz.
+- **Herencia:** No aplica directamente en las entidades base del modelo actual, ya que cada entidad representa una tabla independiente de la base de datos relacional.
+- **Polimorfismo:** Se aplicó mediante la implementación de interfaces estándar de persistencia (ej. `ICrud<T>`) para reutilizar firmas de métodos como `Insertar()`, `Actualizar()` y `Eliminar()` según el tipo de objeto.
+- **Sobrecarga:** Implementada en métodos de búsqueda (ej. `BuscarLibro(string isbn)` y `BuscarLibro(string titulo)`), permitiendo ejecutar operaciones de consulta bajo diferentes parámetros.
+
+# 7. MODELO ENTIDAD-RELACIÓN
+
+## 7.1 Descripción
+
+El Modelo Entidad-Relación (MER) define la estructura lógica de la base de datos relacional implementada en Microsoft SQL Server para el Sistema de Gestión de Biblioteca (LMS). El modelo está optimizado en Tercera Forma Normal (3FN) para garantizar la integridad referencial, evitar la duplicidad de datos y dar soporte a las operaciones transaccionales consumidas desde la capa de acceso a datos (DAL).
+
+## 7.2 Diagrama entidad-relación
+
+```mermaid
+erDiagram
+    AUTORES ||--o{ LIBROS : "escribe"
+    EDITORIALES ||--o{ LIBROS : "publica"
+    USUARIOS ||--o{ PRESTAMOS : "realiza"
+    LIBROS ||--o{ PRESTAMOS : "se presta"
+
+    AUTORES {
+        INT IdAutor PK
+        VARCHAR_100 Nombre
+        VARCHAR_100 Apellido
+    }
+
+    EDITORIALES {
+        INT IdEditorial PK
+        VARCHAR_150 Nombre
+    }
+
+    LIBROS {
+        VARCHAR_20 ISBN PK
+        VARCHAR_200 Titulo
+        INT IdAutor FK
+        INT IdEditorial FK
+        VARCHAR_100 Categoria
+        INT Anio
+        INT Existencias
+    }
+
+    USUARIOS {
+        INT IdUsuario PK
+        VARCHAR_100 Nombre
+        VARCHAR_100 Apellido
+        VARCHAR_30 Documento
+        VARCHAR_30 Telefono
+        VARCHAR_150 Correo
+    }
+
+    PRESTAMOS {
+        INT IdPrestamo PK
+        INT IdUsuario FK
+        VARCHAR_20 ISBN FK
+        DATE FechaPrestamo
+        DATE FechaDevolucion
+        VARCHAR_20 Estado
+    }
+```
+# 8. DICCIONARIO DE DATOS
+
+## 8.1 Convenciones
+
+| Abreviatura | Significado |
+| :--- | :--- |
+| **PK** | Clave primaria |
+| **FK** | Clave foránea |
+| **UQ** | Campo con valor único |
+| **NULL** | Campo que permite valores nulos (opcional) |
+| **NOT NULL** | Campo obligatorio (no permite valores nulos) |
+
+## 8.2 Tabla: AUTORES
+
+| Campo | Tipo de dato | Clave | Nulo | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **IdAutor** | INT | PK | NOT NULL | Identificador único del autor (Identity). |
+| **Nombre** | VARCHAR(100) | - | NOT NULL | Nombre del autor. |
+| **Apellido** | VARCHAR(100) | - | NOT NULL | Apellido del autor. |
+
+## 8.3 Tabla: EDITORIALES
+
+| Campo | Tipo de dato | Clave | Nulo | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **IdEditorial** | INT | PK | NOT NULL | Identificador único de la editorial (Identity). |
+| **Nombre** | VARCHAR(150) | - | NOT NULL | Nombre de la casa editorial. |
+
+## 8.4 Tabla: LIBROS
+
+| Campo | Tipo de dato | Clave | Nulo | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **ISBN** | VARCHAR(20) | PK | NOT NULL | Código único internacional del libro. |
+| **Título** | VARCHAR(200) | - | NOT NULL | Título de la obra bibliográfica. |
+| **IdAutor** | INT | FK | NOT NULL | Clave foránea referenciada a `AUTORES(IdAutor)`. |
+| **IdEditorial** | INT | FK | NOT NULL | Clave foránea referenciada a `EDITORIALES(IdEditorial)`. |
+| **Categoría** | VARCHAR(100) | - | NOT NULL | Género o área temática del libro. |
+| **Año** | INT | - | NOT NULL | Año de publicación de la obra. |
+| **Existencias** | INT | - | NOT NULL | Cantidad de ejemplares disponibles en inventario. |
+
+## 8.5 Tabla: USUARIOS
+
+| Campo | Tipo de dato | Clave | Nulo | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **IdUsuario** | INT | PK | NOT NULL | Identificador único del usuario (Identity). |
+| **Nombre** | VARCHAR(100) | - | NOT NULL | Nombres del usuario registrado. |
+| **Apellido** | VARCHAR(100) | - | NOT NULL | Apellidos del usuario registrado. |
+| **Documento** | VARCHAR(30) | UQ | NOT NULL | Documento de identidad (Único). |
+| **Teléfono** | VARCHAR(30) | - | NULL | Número telefónico de contacto. |
+| **Correo** | VARCHAR(150) | - | NOT NULL | Dirección de correo electrónico. |
+
+## 8.6 Tabla: PRÉSTAMOS
+
+| Campo | Tipo de dato | Clave | Nulo | Descripción |
+| :--- | :--- | :--- | :--- | :--- |
+| **IdPréstamo** | INT | PK | NOT NULL | Identificador único de la transacción (Identity). |
+| **IdUsuario** | INT | FK | NOT NULL | Clave foránea referenciada a `USUARIOS(IdUsuario)`. |
+| **ISBN** | VARCHAR(20) | FK | NOT NULL | Clave foránea referenciada a `LIBROS(ISBN)`. |
+| **FechaPréstamo** | DATE | - | NOT NULL | Fecha en que se genera el préstamo. |
+| **FechaDevolución** | DATE | - | NULL | Fecha real de retorno del libro prestado. |
+| **Estado** | VARCHAR(20) | - | NOT NULL | Estado del préstamo (`Disponible`, `Prestado`, `Devuelto`).
+
+## 8.7 Tabla: DetallePrestamo
+
+  ---------------------------------------------------------------------------------------
+  Campo                     Tipo de dato    Clave          Nulo           Descripción
+  ------------------------- --------------- -------------- -------------- ---------------
+  idDetalle                 INT             PK             No             Identificador
+                                                                          único del
+                                                                          detalle.
+
+  idPrestamo                INT             FK             No             Préstamo al que
+                                                                          pertenece.
+
+  idLibro                   INT             FK             No             Libro prestado.
+
+  fechaDevolucionEstimada   DATE            \-             No             Fecha estimada
+                                                                          de devolución.
+
+  fechaDevolucionReal       DATE            \-             Sí             Fecha real de
+                                                                          devolución.
+
+  valor                     DECIMAL(10,2)   \-             No             Valor asociado
+                                                                          al préstamo, si
+                                                                          aplica.
+
+  multa                     DECIMAL(10,2)   \-             Sí             Valor de la
+                                                                          multa generada.
+
+  estado                    VARCHAR(20)     \-             No             Estado del
+                                                                          detalle.
+  ---------------------------------------------------------------------------------------
+
+## 8.8 Tabla: Devolucion
+
+  Campo             Tipo de dato    Clave   Nulo   Descripción
+  ----------------- --------------- ------- ------ ---------------------------------------
+  idDevolucion      INT             PK      No     Identificador único de la devolución.
+  idDetalle         INT             FK      No     Detalle del préstamo devuelto.
+  fechaDevolucion   DATETIME        \-      No     Fecha de devolución.
+  diasRetraso       INT             \-      No     Número de días de retraso.
+  multa             DECIMAL(10,2)   \-      Sí     Valor de la multa, si aplica.
+
+> **IMPORTANTE:** El diccionario debe coincidir exactamente con el
+> script SQL final. Si los nombres, tipos o campos de la base de datos
+> son diferentes, actualizar esta sección.

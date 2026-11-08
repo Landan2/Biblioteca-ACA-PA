@@ -373,8 +373,17 @@ namespace Biblioteca_ACA_PA
 
         }
 
+        private void btnCancelarA_Click(object sender, EventArgs e)
+        {
 
 
+            txtNombreA.Clear();
+            txtApellidoA.Clear();
+
+            txtNombreA.Focus();
+
+
+        }
 
 
 

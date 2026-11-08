@@ -193,6 +193,7 @@
             btnCancelarA.Text = "Cancelar";
             btnCancelarA.TextAlign = ContentAlignment.TopCenter;
             btnCancelarA.UseVisualStyleBackColor = false;
+            btnCancelarA.Click += btnCancelarA_Click;
             // 
             // btnEliminarA
             // 

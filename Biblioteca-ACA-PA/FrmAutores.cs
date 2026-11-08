@@ -110,7 +110,7 @@ namespace Biblioteca_ACA_PA
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Error al buscar el Autor deseadoo:\n" + ex.Message,
+                    "Error al buscar el Autor deseado:\n" + ex.Message,
                     "Biblioteca",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);

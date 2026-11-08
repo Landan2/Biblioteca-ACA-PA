@@ -81,7 +81,7 @@
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Sitka Banner", 26.2499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = Color.Maroon;
-            lblTitulo.Location = new Point(407, 2);
+            lblTitulo.Location = new Point(389, 4);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(272, 50);
             lblTitulo.TabIndex = 0;

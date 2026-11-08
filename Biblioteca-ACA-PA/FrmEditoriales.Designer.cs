@@ -30,7 +30,7 @@
         {
             pnlEditorial = new Panel();
             lblEditoriales = new Label();
-            pnlCargarE = new Panel();
+            pnlDatosE = new Panel();
             btnBuscarE = new FontAwesome.Sharp.IconButton();
             txtBuscarE = new TextBox();
             lblBuscarE = new Label();
@@ -44,7 +44,7 @@
             btnNuevoE = new FontAwesome.Sharp.IconButton();
             dgvEditoriales = new DataGridView();
             pnlEditorial.SuspendLayout();
-            pnlCargarE.SuspendLayout();
+            pnlDatosE.SuspendLayout();
             pnlBotonesE.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEditoriales).BeginInit();
             SuspendLayout();
@@ -71,20 +71,20 @@
             lblEditoriales.TabIndex = 0;
             lblEditoriales.Text = "Gestión de Editoriales";
             // 
-            // pnlCargarE
+            // pnlDatosE
             // 
-            pnlCargarE.BackColor = Color.WhiteSmoke;
-            pnlCargarE.Controls.Add(btnBuscarE);
-            pnlCargarE.Controls.Add(txtBuscarE);
-            pnlCargarE.Controls.Add(lblBuscarE);
-            pnlCargarE.Controls.Add(txtNombreE);
-            pnlCargarE.Controls.Add(lblNombreE);
-            pnlCargarE.Dock = DockStyle.Top;
-            pnlCargarE.Location = new Point(0, 75);
-            pnlCargarE.Margin = new Padding(4);
-            pnlCargarE.Name = "pnlCargarE";
-            pnlCargarE.Size = new Size(1041, 183);
-            pnlCargarE.TabIndex = 1;
+            pnlDatosE.BackColor = Color.WhiteSmoke;
+            pnlDatosE.Controls.Add(btnBuscarE);
+            pnlDatosE.Controls.Add(txtBuscarE);
+            pnlDatosE.Controls.Add(lblBuscarE);
+            pnlDatosE.Controls.Add(txtNombreE);
+            pnlDatosE.Controls.Add(lblNombreE);
+            pnlDatosE.Dock = DockStyle.Top;
+            pnlDatosE.Location = new Point(0, 75);
+            pnlDatosE.Margin = new Padding(4);
+            pnlDatosE.Name = "pnlDatosE";
+            pnlDatosE.Size = new Size(1041, 183);
+            pnlDatosE.TabIndex = 1;
             // 
             // btnBuscarE
             // 
@@ -240,7 +240,7 @@
             ClientSize = new Size(1041, 749);
             Controls.Add(dgvEditoriales);
             Controls.Add(pnlBotonesE);
-            Controls.Add(pnlCargarE);
+            Controls.Add(pnlDatosE);
             Controls.Add(pnlEditorial);
             Font = new Font("Sitka Text", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
@@ -250,8 +250,8 @@
             WindowState = FormWindowState.Maximized;
             pnlEditorial.ResumeLayout(false);
             pnlEditorial.PerformLayout();
-            pnlCargarE.ResumeLayout(false);
-            pnlCargarE.PerformLayout();
+            pnlDatosE.ResumeLayout(false);
+            pnlDatosE.PerformLayout();
             pnlBotonesE.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvEditoriales).EndInit();
             ResumeLayout(false);
@@ -260,7 +260,7 @@
         #endregion
 
         private Panel pnlEditorial;
-        private Panel pnlCargarE;
+        private Panel pnlDatosE;
         private Panel pnlBotonesE;
         private DataGridView dgvEditoriales;
         private Label lblEditoriales;

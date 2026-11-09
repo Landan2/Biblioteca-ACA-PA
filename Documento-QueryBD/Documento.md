@@ -15,13 +15,14 @@
 ### Sistema de Gestión de Biblioteca
 
 **Presentado por:**\
+
 \[Laura Ximena Bejarano Acosta y Claudith Beltran Landero\]
 
 **Docente:**\
-\[Veronica Castro Munar\]
+Veronica Castro Munar
 
 **Fecha:**\
-\[Bogóta, 07, noviembre 2026\]
+Bogóta, 07, noviembre 2026
 
 ---------------------------------------------------------------------------
 
@@ -34,12 +35,14 @@ Avanzada**, aplicando Programación Orientada a Objetos, base de datos
 relacional, arquitectura por capas, operaciones CRUD, validaciones,
 manejo de excepciones y conexión con SQL Server.
 
+
 **Estudiante(s):** \[Laura Ximena Bejarano Acosta y Claudith Beltran Landero\]
 **Programa:** \[Ingenieria de sistemas\]\
 **Grupo:** \[Grupo\]\
 **Docente:** \[Veronica Castro Munar\]\
 **Institución:** \[Corporacion Unificada Nacional de la Edcucacion Superior - CUN\]\
 **Año:** \[2026\]
+
 
 ------------------------------------------------------------------------
 
@@ -248,7 +251,7 @@ graph LR
     Asistente --> CU04
     Asistente --> CU05
     Asistente --> CU06
-  ```
+```
 
 ## 5.3 Descripción de casos de uso
 
@@ -344,8 +347,9 @@ El diagrama de clases representa la estructura estática del sistema de gestión
 
 ```mermaid
 classDiagram
-  
-     class AUTORES {
+
+
+    class AUTORES {
         +int IdAutor
         +Varchar 100 Nombre
         +Varchar 100 Apellido
@@ -386,13 +390,11 @@ classDiagram
         +Varchar 20 Estado
     }
 
-
     AUTORES "1" --> "0..*" LIBROS : escribe
     EDITORIALES "1" --> "0..*" LIBROS : publica
     USUARIOS "1" --> "0..*" PRESTAMOS : realiza
     LIBROS "1" --> "0..*" PRESTAMOS : se presta
 ```
-
 ## 6.3 Principales clases
 
 | Clase | Responsabilidad |

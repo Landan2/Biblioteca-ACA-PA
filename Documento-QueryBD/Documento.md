@@ -660,20 +660,8 @@ A continuación se describen las asociaciones y cardinalidades que conectan las 
 | **idDetalle** | INT | PK | No | Identificador único del detalle. |
 | **idPrestamo** | INT | FK | No | Préstamo al que pertenece. |
 | **idLibro** | INT | FK | No | Libro prestado. |
-| **fechaDevolucionEstimada** | DATE | - | No | Fecha estimada de devolución. |
-| **fechaDevolucionReal** | DATE | - | Sí | Fecha real de devolución. |
 | **estado** | VARCHAR(20) | - | No | Estado del detalle. |
   ---------------------------------------------------------------------------------------
-
-### 8.8 Tabla: Devolucion
-
-| Campo | Tipo de dato | Clave | Nulo | Descripción |
-| :--- | :--- | :---: | :---: | :--- |
-| **idDevolucion** | INT | PK | No | Registrar nuevos préstamos de libros por parte de algún usuario. |
-| **idDetalle** | INT | FK | No | Registro fecha del préstamo. |
-| **fechaDevolucion** | DATETIME | - | No | Fecha de devolución. |
-| **diasRetraso** | INT | - | No | Gestionar el estado del préstamo, si es pendiente o devuelto. |
-| **Eliminar** | DECIMAL(10,2) | - | Sí | Eliminar registros de préstamos, si el sistema lo permite. |
 
 # 9. ARQUITECTURA DEL SISTEMA
 

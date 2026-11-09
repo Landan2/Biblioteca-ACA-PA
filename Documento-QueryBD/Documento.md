@@ -652,15 +652,6 @@ A continuación se describen las asociaciones y cardinalidades que conectan las 
 | **FechaDevolución** | DATE | - | NULL | Fecha real de retorno del libro prestado. |
 | **Estado** | VARCHAR(20) | - | NOT NULL | Estado del préstamo (`Disponible`, `Prestado`, `Devuelto`).
 
-## 8.7 Tabla: DetallePrestamo
-
-
-| Campo | Tipo de dato | Clave | Nulo | Descripción |
-| :--- | :--- | :---: | :---: | :--- |
-| **idDetalle** | INT | PK | No | Identificador único del detalle. |
-| **idPrestamo** | INT | FK | No | Préstamo al que pertenece. |
-| **idLibro** | INT | FK | No | Libro prestado. |
-| **estado** | VARCHAR(20) | - | No | Estado del detalle. |
   ---------------------------------------------------------------------------------------
 
 # 9. ARQUITECTURA DEL SISTEMA

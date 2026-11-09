@@ -950,10 +950,9 @@ El funcionamiento del sistema se verificó mediante la ejecución de pruebas uni
 | **CP03** | Registrar usuario | Registrar un usuario con datos personales válidos. | Usuario registrado e ingresado al padrón de lectores. | Registro exitoso y habilitado para préstamos. | **Aprobado** |
 | **CP04** | Registrar préstamo | Seleccionar un libro disponible y un usuario activo. | Préstamo registrado y disponibilidad del ejemplar descontada. | Transacción completada y stock actualizado automáticamente. | **Aprobado** |
 | **CP05** | Registrar préstamo | Intentar prestar un libro cuyo stock esté en 0 o no disponible. | Impedir el préstamo y notificar la falta de disponibilidad. | El sistema bloquea la transacción y lanza advertencia. | **Aprobado** |
-| **CP06** | Registrar devolución | Procesar el retorno de un préstamo activo en la fecha estimada. | Registrar la devolución y restaurar la disponibilidad del libro. | Devolución registrada y ejemplar nuevamente disponible. | **Aprobado** |
-| **CP07** | Devolución con retraso | Procesar devolución con fecha real posterior a la estimada. | Calcular automáticamente los días de retraso y el monto de la penalización. | Días de mora y multa calculados correctamente. | **Aprobado** |
-| **CP08** | Consulta de libros | Filtrar el catálogo para consultar libros en estado disponible. | Mostrar el listado preciso de ejemplares aptos para préstamo. | La lista se actualiza mostrando solo los libros disponibles. | **Aprobado** |
-| **CP09** | Conexión a Base de Datos | Intentar iniciar la aplicación con permisos o servidor inaccesible. | Desplegar mensaje de error de conexión controlado. | Mensaje de error controlado mostrado correctamente. | **Aprobado** |
+| **CP06** | Registrar devolución | Procesar el retorno de un préstamo activo en la fecha estimada. | Registrar la devolución y restaurar la disponibilidad del libro. | Devolución registrada y ejemplar nuevamente disponible. | **Aprobado** | 
+| **CP07** | Consulta de libros | Filtrar el catálogo para consultar libros en estado disponible. | Mostrar el listado preciso de ejemplares aptos para préstamo. | La lista se actualiza mostrando solo los libros disponibles. | **Aprobado** |
+
 
   ------------------------------------------------------------------------------------------
 
@@ -979,11 +978,11 @@ En esta sección se adjuntan las capturas de pantalla que respaldan la ejecució
 
 **Resultado:** Se seleccionó un usuario activo y un libro disponible. Al confirmar la transacción, se generó el préstamo y el stock del ejemplar disminuyó automáticamente en el inventario.
 
-### Prueba CP04: Procesamiento de devolución y cálculo de mora
+### Prueba CP04: Procesamiento de devolución 
 
 ![Evidencia CP04](ruta/prueba04.png)
 
-**Resultado:** Se procesó la devolución de un libro entregado con fecha posterior a la estimada. El sistema calculó los días de retraso, generó la multa correspondiente y restituyó la disponibilidad del ejemplar.
+**Resultado:** Se registro que el libro quedo en estado Devuelto despues de registrar ese campo de devolución. 
 
 ------------------------------------------------------------------------
 

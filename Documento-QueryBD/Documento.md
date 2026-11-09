@@ -347,53 +347,158 @@ El diagrama de clases representa la estructura estática del sistema de gestión
 
 ```mermaid
 classDiagram
+    direction TB
 
-
-    class AUTORES {
-        +int IdAutor
-        +Varchar 100 Nombre
-        +Varchar 100 Apellido
+    class Autor {
+        - idAutor: int
+        - nombre: string
+        - apellidos: string
+        - nacionalidad: string
+        - fechaNacimiento: DateTime
+        + Autor()
+        + Autor(idAutor: int, nombre: string, ...)
+        + Registrar(): bool
+        + Actualizar(): bool
+        + Eliminar(): bool
+        + ObtenerPorId(): Autor
+        + Listar(): List~Autor~
     }
 
-
-     class EDITORIALES {
-        +int IdEditorial
-        +Varchar 150 Nombre
-    }
-     
-    class LIBROS {
-        +Varchar 20 ISBN
-        +Varchar 200 Titulo
-        +int IdAutor
-        +int IdEditorial
-        +Varchar 100 Categoria
-        +int Año
-        +int Existencias
-    }
-
-     class USUARIOS {
-        +int IdUsuario
-        +Varchar 100 Nombre
-        +Varchar 100 Apellido
-        +Varchar 30 Documento
-        +Varchar 30 Telefono
-        +Varchar 150 Correo
+    class Libro {
+        - idLibro: int
+        - codigo: string
+        - titulo: string
+        - anioPublicacion: int
+        - idAutor: int
+        - idCategoria: int
+        - cantidad: int
+        - estado: string
+        - sinopsis: string
+        + Libro()
+        + Libro(idLibro: int, codigo: string, ...)
+        + Registrar(): bool
+        + Actualizar(): bool
+        + Eliminar(): bool
+        + ObtenerPorId(): Libro
+        + Listar(): List~Libro~
+        + Buscar(criterio: string): List~Libro~
     }
 
-
-     class PRESTAMOS {
-        +int IdPrestamo
-        +int IdUsuario
-        +Varchar 20 ISBN
-        +Date FechaPrestamo
-        +Date FechaDevolucion
-        +Varchar 20 Estado
+    class Categoria {
+        - idCategoria: int
+        - nombre: string
+        - descripcion: string
+        + Categoria()
+        + Categoria(idCategoria: int, nombre: string, ...)
+        + Registrar(): bool
+        + Actualizar(): bool
+        + Eliminar(): bool
+        + ObtenerPorId(): Categoria
+        + Listar(): List~Categoria~
     }
 
-    AUTORES "1" --> "0..*" LIBROS : escribe
-    EDITORIALES "1" --> "0..*" LIBROS : publica
-    USUARIOS "1" --> "0..*" PRESTAMOS : realiza
-    LIBROS "1" --> "0..*" PRESTAMOS : se presta
+    class Usuario {
+        - idUsuario: int
+        - documento: string
+        - tipoDocumento: string
+        - nombre: string
+        - apellidos: string
+        - direccion: string
+        - telefono: string
+        - correo: string
+        - fechaNacimiento: DateTime
+        - estado: string
+        + Usuario()
+        + Usuario(idUsuario: int, documento: string, ...)
+        + Registrar(): bool
+        + Actualizar(): bool
+        + Eliminar(): bool
+        + ObtenerPorId(): Usuario
+        + Listar(): List~Usuario~
+    }
+
+    class Prestamo {
+        - idPrestamo: int
+        - idUsuario: int
+        - fechaPrestamo: DateTime
+        - estado: string
+        + Prestamo()
+        + Prestamo(idPrestamo: int, ...)
+        + Registrar(): bool
+        + ActualizarEstado(): bool
+        + ObtenerPorId(): Prestamo
+        + Listar(): List~Prestamo~
+    }
+
+    class DetallePrestamo {
+        - idDetalle: int
+        - idPrestamo: int
+        - idLibro: int
+        - fechaDevolucionEstimada: DateTime
+        - fechaDevolucionReal: DateTime
+        - valor: decimal
+        - multa: decimal
+        - estado: string
+        + DetallePrestamo()
+        + Registrar(): bool
+        + CalcularDiasRetraso(): int
+        + CalcularMulta(): decimal
+        + ObtenerPorId(): DetallePrestamo
+        + Listar(): List~DetallePrestamo~
+    }
+
+    class Devolucion {
+        - idDevolucion: int
+        - idDetalle: int
+        - fechaDevolucion: DateTime
+        - diasRetraso: int
+        - multa: decimal
+        + Devolucion()
+        + Registrar(): bool
+        + CalcularDiasRetraso(): int
+        + CalcularMulta(): decimal
+        + ObtenerPorId(): Devolucion
+        + Listar(): List~Devolucion~
+    }
+
+    class Reporte {
+        - fechaInicio: DateTime
+        - fechaFin: DateTime
+        - tipoReporte: string
+        + GenerarReporteLibrosDisponibles(): DataTable
+        + GenerarReportePrestamosActivos(): DataTable
+        + GenerarReporteUsuariosMorosos(): DataTable
+        + GenerarReporteDevolucionesMultas(): DataTable
+        + ExportarPDF(datos: DataTable): bool
+        + ExportarExcel(datos: DataTable): bool
+    }
+
+    class Conexion {
+        - cadenaConexion: string
+        + Conectar(): SqlConnection
+        + Cerrar(conexion: SqlConnection): void
+    }
+
+    Autor "1" -- "0..*" Libro : escribe >
+    Libro "0..*" -- "1" Categoria : pertenece a >
+    Usuario "1" -- "0..*" Prestamo : realiza >
+    Prestamo "1" -- "1..*" DetallePrestamo : tiene >
+    Libro "1" -- "0..*" DetallePrestamo : corresponde a <
+    DetallePrestamo "1" -- "0..1" Devolucion : genera >
+
+    Reporte ..> Libro : consulta
+    Reporte ..> Usuario : consulta
+    Reporte ..> Prestamo : consulta
+    Reporte ..> Devolucion : consulta
+
+    Autor ..> Conexion : usa
+    Libro ..> Conexion : usa
+    Categoria ..> Conexion : usa
+    Usuario ..> Conexion : usa
+    Prestamo ..> Conexion : usa
+    DetallePrestamo ..> Conexion : usa
+    Devolucion ..> Conexion : usa
+    Reporte ..> Conexion : usa
 ```
 ## 6.3 Principales clases
 
@@ -474,6 +579,18 @@ erDiagram
         VARCHAR_20 Estado
     }
 ```
+## 7.3 Relaciones principales
+
+A continuación se describen las asociaciones y cardinalidades que conectan las entidades del dominio dentro del sistema:
+
+- **Autor – Libro (1 : 0..*):** Un autor puede haber escrito uno o más libros, mientras que cada ejemplar en el catálogo pertenece a un único autor.
+- **Categoría – Libro (1 : 0..*):** Una categoría o editorial abarca múltiples libros, pero cada libro está clasificado bajo una sola categoría.
+- **Usuario – Préstamo (1 : 0..*):** Un usuario habilitado puede efectuar múltiples préstamos, estando cada préstamo vinculado a un solo lector.
+- **Préstamo – DetallePrestamo (1 : 1..*):** Una transacción de préstamo se compone de uno o varios detalles de ejemplares solicitados.
+- **Libro – DetallePrestamo (1 : 0..*):** Un libro puede figurar en diferentes detalles de préstamos a lo largo del tiempo, pero cada detalle hace referencia a un solo libro.
+- **DetallePrestamo – Devolución (1 : 0..1):** Cada detalle de préstamo registrado puede derivar en un único registro de devolución al concretar la entrega física del libro.
+- **Entidades – Conexión (Dependencia):** Las clases de negocio utilizan la clase `Conexion` para administrar la apertura, ejecución de comandos y cierre de sesiones con SQL Server.
+
 # 8. DICCIONARIO DE DATOS
 
 ## 8.1 Convenciones
@@ -797,7 +914,7 @@ En esta sección se incluyen las evidencias visuales del funcionamiento de la in
 
 ## 11.1 Menú principal
 
-![Menú principal](ruta/captura-menu.png)
+![Menú principal](arrecifes.png.jpg)
 
 **Descripción:** Pantalla inicial del sistema que funciona como panel de control central. Proporciona un menú lateral de navegación para acceder a los módulos de Libros, Usuarios, Autores, Editoriales, Préstamos, Devoluciones y Reportes.
 

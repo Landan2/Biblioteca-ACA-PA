@@ -537,45 +537,392 @@ erDiagram
 
 ## 8.7 Tabla: DetallePrestamo
 
-  ---------------------------------------------------------------------------------------
-  Campo                     Tipo de dato    Clave          Nulo           Descripción
-  ------------------------- --------------- -------------- -------------- ---------------
-  idDetalle                 INT             PK             No             Identificador
-                                                                          único del
-                                                                          detalle.
 
-  idPrestamo                INT             FK             No             Préstamo al que
-                                                                          pertenece.
-
-  idLibro                   INT             FK             No             Libro prestado.
-
-  fechaDevolucionEstimada   DATE            \-             No             Fecha estimada
-                                                                          de devolución.
-
-  fechaDevolucionReal       DATE            \-             Sí             Fecha real de
-                                                                          devolución.
-
-  valor                     DECIMAL(10,2)   \-             No             Valor asociado
-                                                                          al préstamo, si
-                                                                          aplica.
-
-  multa                     DECIMAL(10,2)   \-             Sí             Valor de la
-                                                                          multa generada.
-
-  estado                    VARCHAR(20)     \-             No             Estado del
-                                                                          detalle.
+| Campo | Tipo de dato | Clave | Nulo | Descripción |
+| :--- | :--- | :---: | :---: | :--- |
+| **idDetalle** | INT | PK | No | Identificador único del detalle. |
+| **idPrestamo** | INT | FK | No | Préstamo al que pertenece. |
+| **idLibro** | INT | FK | No | Libro prestado. |
+| **fechaDevolucionEstimada** | DATE | - | No | Fecha estimada de devolución. |
+| **fechaDevolucionReal** | DATE | - | Sí | Fecha real de devolución. |
+| **estado** | VARCHAR(20) | - | No | Estado del detalle. |
   ---------------------------------------------------------------------------------------
 
-## 8.8 Tabla: Devolucion
+### 8.8 Tabla: Devolucion
 
-  Campo             Tipo de dato    Clave   Nulo   Descripción
-  ----------------- --------------- ------- ------ ---------------------------------------
-  idDevolucion      INT             PK      No     Identificador único de la devolución.
-  idDetalle         INT             FK      No     Detalle del préstamo devuelto.
-  fechaDevolucion   DATETIME        \-      No     Fecha de devolución.
-  diasRetraso       INT             \-      No     Número de días de retraso.
-  multa             DECIMAL(10,2)   \-      Sí     Valor de la multa, si aplica.
+| Campo | Tipo de dato | Clave | Nulo | Descripción |
+| :--- | :--- | :---: | :---: | :--- |
+| **idDevolucion** | INT | PK | No | Registrar nuevos préstamos de libros por parte de algún usuario. |
+| **idDetalle** | INT | FK | No | Registro fecha del préstamo. |
+| **fechaDevolucion** | DATETIME | - | No | Fecha de devolución. |
+| **diasRetraso** | INT | - | No | Gestionar el estado del préstamo, si es pendiente o devuelto. |
+| **Eliminar** | DECIMAL(10,2) | - | Sí | Eliminar registros de préstamos, si el sistema lo permite. |
 
-> **IMPORTANTE:** El diccionario debe coincidir exactamente con el
-> script SQL final. Si los nombres, tipos o campos de la base de datos
-> son diferentes, actualizar esta sección.
+# 9. ARQUITECTURA DEL SISTEMA
+
+## 9.1 Descripción general
+
+El Sistema de Gestión de Biblioteca se desarrolla utilizando una arquitectura por capas, con el propósito de separar las responsabilidades del sistema y facilitar su mantenimiento, organización y evolución.
+
+La arquitectura está compuesta por:
+
+1.  Capa de Presentación: Interfaz de usuario (UI), vistas y captura de datos.
+2.  Capa de Lógica de Negocio: Reglas de negocio, validaciones y procesamiento central.
+3.  Capa de Acceso a Datos: Repositorios, mapeo de entidades (ORM) y conexiones a la base de datos.
+4.  Capa de Base de Datos: Almacenamiento persistente e integridad de datos en SQL Server
+
+## 9.2 Diagrama de arquitectura
+
+
+```mermaid
+graph TD
+    classDef pres fill:#009688,stroke:#004D40,stroke-width:2px,color:#fff;
+    classDef log fill:#4CAF50,stroke:#1B5E20,stroke-width:2px,color:#fff;
+    classDef dat fill:#FF9800,stroke:#E65100,stroke-width:2px,color:#fff;
+    classDef bd fill:#9C27B0,stroke:#4A148C,stroke-width:2px,color:#fff;
+    classDef subNode fill:#ffffff,stroke:#333,stroke-width:1px,color:#333;
+
+    subgraph CP["CAPA DE PRESENTACIÓN"]
+        UI["Interfaz de Usuario (UI)"]:::subNode
+        Vistas["Vistas"]:::subNode
+        CD["Captura de Datos"]:::subNode
+    end
+    class CP pres
+
+    subgraph CLN["CAPA DE LÓGICA DE NEGOCIO"]
+        RN["Reglas de Negocio"]:::subNode
+        VAL["Validaciones"]:::subNode
+        PC["Procesamiento Central"]:::subNode
+    end
+    class CLN log
+
+    subgraph CAD["CAPA DE ACCESO A DATOS"]
+        REP["Repositorios"]:::subNode
+        ORM["Mapeo de Entidades (ORM)"]:::subNode
+        CONN["Conexiones a BD (Conexion.cs)"]:::subNode
+    end
+    class CAD dat
+
+    subgraph CBD["CAPA DE BASE DE DATOS"]
+        SQL[("SQL Server\nBD: Biblioteca-ACA-ProgramacionA")]:::subNode
+        TBL["Tablas:\n• Libros / Usuarios / Autores\n• Editoriales / Prestamos\n• DetallePrestamo / Devolucion"]:::subNode
+    end
+    class CBD bd
+
+    %% Flujos de interacción
+    CP <-->|Solicitud / Respuesta| CLN
+    CLN <-->|Operaciones de Negocio| CAD
+    CAD <-->|Persistencia de Datos| CBD
+```
+
+## 9.3 Capa de Presentación
+
+**Responsabilidad:**  
+Es la capa mediante la cual el usuario interactúa con el sistema, gestionando las interfaces gráficas, la captura de datos de entrada y la visualización de la información procesada.
+
+**Componentes:**  
+- `FrmPrincipal`: Ventana contenedora e interfaz principal con menú de navegación.
+- `FrmLibros`: Gestión e inventario de libros.
+- `FrmAutores`: Gestión del catálogo de autores.
+- `FrmEditoriales`: Gestión de editoriales de libros.
+- `FrmUsuarios`: Registro y administración de usuarios.
+- `FrmPrestamos`: Registro y control de préstamos.
+- `FrmDevoluciones`: Control de devoluciones y seguimiento de retrasos.
+
+**Tecnología utilizada:**  
+- C#
+- Windows Forms (WinForms)
+- .NET Framework 4.8 / .NET 6.0
+
+## 9.4 Capa de Lógica de Negocio
+
+**Responsabilidad:**  
+Procesa las solicitudes provenientes de la interfaz de usuario, aplica las reglas de negocio del dominio y coordina las operaciones entre la capa de presentación y la capa de acceso a datos.
+
+**Componentes:**  
+- `LibroController`: Control y validación del inventario de libros.
+- `AutorController`: Gestión y reglas asociadas a los autores.
+- `EditorialController`: Validación y mantenimiento de editoriales.
+- `UsuarioController`: Verificación del estado y vigencia de usuarios.
+- `PrestamoController`: Procesamiento de solicitudes de préstamos.
+- `DevolucionController`: Control de devoluciones, cálculo de retrasos y actualización de registros.
+
+**Ejemplos de reglas:**  
+- Validar la disponibilidad del libro antes de registrar un préstamo.
+- Validar la existencia activa del usuario en el sistema.
+- Validar la existencia del libro seleccionado.
+- Calcular los días de retraso en la entrega del libro.
+- Calcular el monto de la multa según los días de mora acumulados.
+- Actualizar automáticamente los estados de préstamos y ejemplares.
+
+## 9.5 Capa de Acceso a Datos
+
+**Responsabilidad:**  
+Gestiona la comunicación entre la aplicación y la base de datos SQL Server, ejecutando la lectura, inserción, actualización y eliminación de los registros del sistema.
+
+**Componentes:**  
+- `Conexion`: Clase encargada de gestionar la cadena de conexión y el estado de la base de datos.
+- `LibroDAO`: Operaciones CRUD para el catálogo de libros.
+- `AutorDAO`: Operaciones de persistencia relativas a los autores.
+- `EditorialDAO`: Operaciones para el catálogo de editoriales.
+- `UsuarioDAO`: Consultas y registro de usuarios en el sistema.
+- `PrestamoDAO`: Control de datos para las transacciones de préstamos.
+- `DevolucionDAO`: Registro y persistencia de las devoluciones efectuadas.
+
+**Tecnologías utilizadas:**  
+- SQL Server
+- ADO.NET
+- Consultas parametrizadas para la seguridad y control de inyección SQL
+
+## 9.6 Capa de Base de Datos
+
+**Responsabilidad:**  
+Almacenar de forma persistente y estructurada toda la información del sistema, garantizando la integridad referencial y el soporte transaccional de los datos.
+
+**Base de datos:** `Biblioteca-ACA-ProgramacionA`
+
+**Tablas principales:**
+
+- `Autor`
+- `Editorial`
+- `Libro`
+- `Usuario`
+- `Prestamo`
+- `DetallePrestamo`
+- `Devolucion`
+
+## 9.7 Flujo de información
+
+El intercambio de información en el sistema sigue un modelo bidireccional a través de la arquitectura en capas:
+
+```mermaid
+graph TD
+    U[Usuario / Cliente] <-->|Entrada / Salida de datos| P[1. Capa de Presentación]
+    P <-->|Petición / Respuesta de interfaz| LN[2. Capa de Lógica de Negocio]
+    LN <-->|Operaciones de Dominio / DTOs| AD[3. Capa de Acceso a Datos]
+    AD <-->|Sentencias SQL / Dataset| BD[(4. SQL Server: Biblioteca-ACA-ProgramacionA)]
+```
+------------------------------------------------------------------------
+# 10. EXPLICACIÓN DE CADA MÓDULO DESARROLLADO
+
+## 10.1 Módulo de libros
+
+**Objetivo:**  
+Gestionar el inventario físico de la biblioteca, administrando la alta, modificación, baja y búsqueda de títulos, asegurando el control sobre la disponibilidad y características de cada ejemplar.
+
+**Funcionalidades:**
+- Registrar.
+- Consultar.
+- Actualizar.
+- Eliminar.
+- Buscar.
+
+**Validaciones:**
+- El título y campos clave no pueden ser nulos.
+- Verificación de existencia del autor y editorial asociados en la base de datos.
+- Control de stock o ejemplares disponibles para evitar valores negativos.
+
+## 10.2 Módulo de autores
+
+**Objetivo:**  
+Mantener un registro centralizado de los autores de las obras literarias para su correcta vinculación relacional con los libros.
+
+**Funcionalidades:**
+- Registrar.
+- Consultar.
+- Actualizar.
+- Eliminar.
+
+## 10.3 Módulo de categorías / editoriales
+
+**Objetivo:**  
+Administrar las casas editoriales y categorías temáticas que clasifican la colección bibliográfica del sistema.
+
+**Funcionalidades:**
+- Registrar.
+- Consultar.
+- Actualizar.
+- Eliminar.
+
+## 10.4 Módulo de usuarios
+
+**Objetivo:**  
+Administrar el padrón de socios o lectores habilitados para solicitar préstamos de libros dentro de la institución.
+
+**Funcionalidades:**
+- Registrar.
+- Consultar.
+- Actualizar.
+- Eliminar.
+
+## 10.5 Módulo de préstamos
+
+**Objetivo:**  
+Controlar la salida temporal de libros, asociando ejemplares con usuarios y definiendo plazos estimados de entrega.
+
+**Funcionalidades:**
+- Registrar préstamo.
+- Consultar préstamos activos.
+- Consultar historial.
+- Actualizar disponibilidad de ejemplares.
+
+## 10.6 Módulo de devoluciones
+
+**Objetivo:**  
+Registrar el retorno de los libros prestados, calculando desfases en el tiempo de entrega, actualizar disponibilidad
+
+**Funcionalidades:**
+- Registrar devolución.
+- Calcular días de retraso.
+- Calcular multa cuando aplique.
+- Actualizar disponibilidad en el catálogo.
+
+## 10.7 Módulo de consultas
+
+**Consultas implementadas:**
+
+- Total de libros registrados.
+- Total de usuarios registrados.
+- Libros disponibles.
+- Libros prestados.
+- Usuarios con préstamos activos.
+- Historial de préstamos.
+- Libros más prestados.
+- Reporte de devoluciones y multas aplicadas.
+------------------------------------------------------------------------
+
+# 11. CAPTURAS DE PANTALLA DEL SISTEMA
+
+En esta sección se incluyen las evidencias visuales del funcionamiento de la interfaz de usuario de la aplicación.
+
+## 11.1 Menú principal
+
+![Menú principal](ruta/captura-menu.png)
+
+**Descripción:** Pantalla inicial del sistema que funciona como panel de control central. Proporciona un menú lateral de navegación para acceder a los módulos de Libros, Usuarios, Autores, Editoriales, Préstamos, Devoluciones y Reportes.
+
+## 11.2 Gestión de libros
+
+![Gestión de libros](ruta/captura-libros.png)
+
+**Descripción:** Interfaz destinada a la administración del inventario de libros. Permite registrar nuevos títulos, consultar la lista completa, actualizar stock o información y realizar búsquedas por filtro.
+
+## 11.3 Gestión de autores
+
+![Gestión de autores](ruta/captura-autores.png)
+
+**Descripción:** Ventana diseñada para la gestión de los autores del sistema, permitiendo su alta, modificación y consulta para vincularlos con el catálogo de libros.
+
+## 11.4 Gestión de categorías / editoriales
+
+![Gestión de categorías](ruta/captura-categorias.png)
+
+**Descripción:** Módulo de mantenimiento de clasificaciones y casas editoriales, permitiendo la organización temática de las colecciones bibliográficas.
+
+## 11.5 Gestión de usuarios
+
+![Gestión de usuarios](ruta/captura-usuarios.png)
+
+**Descripción:** Pantalla para el registro y administración de los datos personales y de contacto de los lectores/socios habilitados para realizar préstamos.
+
+## 11.6 Registro de préstamos
+
+![Registro de préstamos](ruta/captura-prestamos.png)
+
+**Descripción:** Formulario transaccional para procesar las salidas de libros, vinculando el usuario con los libros solicitados y registrando la fecha límite de entrega.
+
+## 11.7 Registro de devoluciones
+
+![Registro de devoluciones](ruta/captura-devoluciones.png)
+
+**Descripción:** Pantalla encargada de registrar la devolución de libros, calculando automáticamente los días de retraso y restituyendo el stock del ejemplar al catálogo.
+
+## 11.8 Consultas y reportes
+
+![Consultas](ruta/captura-consultas.png)
+
+**Descripción:** Módulo de reportes consolidado que permite consultar el total de libros, estado de préstamos activos, usuarios en mora e historial transaccional del sistema.
+------------------------------------------------------------------------
+
+# 12. PRUEBAS DE FUNCIONAMIENTO
+
+## 12.1 Estrategia de pruebas
+
+El funcionamiento del sistema se verificó mediante la ejecución de pruebas unitarias, de integración y de interfaz de usuario (UI) basadas en caja negra. Se evaluaron las operaciones principales del sistema (CRUD de catálogos, control de transacciones de préstamos y devoluciones, y generación de reportes), asegurando que las validaciones de negocio impidan inconsistencias de datos, errores de concurrencia y accesos no autorizados a la base de datos SQL Server.
+
+## 12.2 Casos de prueba
+
+| ID | Funcionalidad | Entrada / Acción | Resultado esperado | Resultado obtenido | Estado |
+| :--- | :--- | :--- | :--- | :--- | :---: |
+| **CP01** | Registrar libro | Registrar un libro con todos los campos obligatorios válidos. | Libro registrado correctamente en la BD. | Registro guardado y mostrado en la lista. | **Aprobado** |
+| **CP02** | Registrar libro | Intentar registrar un libro con código/ISBN duplicado o datos vacíos. | Mostrar mensaje de validación indicando la restricción. | El sistema bloquea el registro y despliega alerta de error. | **Aprobado** |
+| **CP03** | Registrar usuario | Registrar un usuario con datos personales válidos. | Usuario registrado e ingresado al padrón de lectores. | Registro exitoso y habilitado para préstamos. | **Aprobado** |
+| **CP04** | Registrar préstamo | Seleccionar un libro disponible y un usuario activo. | Préstamo registrado y disponibilidad del ejemplar descontada. | Transacción completada y stock actualizado automáticamente. | **Aprobado** |
+| **CP05** | Registrar préstamo | Intentar prestar un libro cuyo stock esté en 0 o no disponible. | Impedir el préstamo y notificar la falta de disponibilidad. | El sistema bloquea la transacción y lanza advertencia. | **Aprobado** |
+| **CP06** | Registrar devolución | Procesar el retorno de un préstamo activo en la fecha estimada. | Registrar la devolución y restaurar la disponibilidad del libro. | Devolución registrada y ejemplar nuevamente disponible. | **Aprobado** |
+| **CP07** | Devolución con retraso | Procesar devolución con fecha real posterior a la estimada. | Calcular automáticamente los días de retraso y el monto de la penalización. | Días de mora y multa calculados correctamente. | **Aprobado** |
+| **CP08** | Consulta de libros | Filtrar el catálogo para consultar libros en estado disponible. | Mostrar el listado preciso de ejemplares aptos para préstamo. | La lista se actualiza mostrando solo los libros disponibles. | **Aprobado** |
+| **CP09** | Conexión a Base de Datos | Intentar iniciar la aplicación con permisos o servidor inaccesible. | Desplegar mensaje de error de conexión controlado. | Mensaje de error controlado mostrado correctamente. | **Aprobado** |
+
+  ------------------------------------------------------------------------------------------
+
+## 12.3 Evidencias de pruebas
+
+En esta sección se adjuntan las capturas de pantalla que respaldan la ejecución satisfactoria de las pruebas de funcionamiento clave del sistema.
+
+### Prueba CP01: Registro exitoso de libro
+
+![Evidencia CP01](ruta/prueba01.png)
+
+**Resultado:** Se completó el formulario con un título, autor, editorial y stock válidos. Al presionar el botón de guardado, la aplicación insertó correctamente el registro en la base de datos SQL Server y actualizó en tiempo real la lista de libros.
+
+### Prueba CP02: Validación de datos obligatorios / Código duplicado
+
+![Evidencia CP02](ruta/prueba02.png)
+
+**Resultado:** Se intentó registrar un libro omitiendo campos requeridos. El sistema capturó la validación, impidió la inserción en la base de datos y desplegó una alerta notificando los campos faltantes al usuario.
+
+### Prueba CP03: Registro de préstamo y actualización de stock
+
+![Evidencia CP03](ruta/prueba03.png)
+
+**Resultado:** Se seleccionó un usuario activo y un libro disponible. Al confirmar la transacción, se generó el préstamo y el stock del ejemplar disminuyó automáticamente en el inventario.
+
+### Prueba CP04: Procesamiento de devolución y cálculo de mora
+
+![Evidencia CP04](ruta/prueba04.png)
+
+**Resultado:** Se procesó la devolución de un libro entregado con fecha posterior a la estimada. El sistema calculó los días de retraso, generó la multa correspondiente y restituyó la disponibilidad del ejemplar.
+
+------------------------------------------------------------------------
+
+# 13. CONCLUSIONES
+
+## Conclusión 1
+
+Se logró el desarrollo e implementación integral del Sistema de Gestión de Biblioteca (`Biblioteca-ACA-ProgramacionA`), cumpliendo satisfactoriamente con la automatización de los procesos de control de inventario, administración de usuarios y trazabilidad transaccional de préstamos y devoluciones.
+
+## Conclusión 2
+
+La aplicación del paradigma de Programación Orientada a Objetos en C# facilitó el modelado estructurado del dominio de la aplicación, promoviendo la encapsulación, el reuso de componentes y la mantenibilidad del código fuente a lo largo del desarrollo.
+
+## Conclusión 3
+
+La implementación de la arquitectura por capas garantizó una clara separación de responsabilidades entre la interfaz gráfica y el motor de SQL Server. Esto permitió asegurar la integridad referencial de los datos, el control del stock y el procesamiento seguro de transacciones a través de ADO.NET.
+
+## Conclusión 4
+
+Se superaron las dificultades técnicas de configuración en el motor de base de datos SQL Server mediante el correcto adjuntado del archivo `.mdf`, el mapeo de permisos de usuario (`db_owner`) y la parametricación adecuada de las cadenas de conexión y consultas.
+
+------------------------------------------------------------------------
+# 14. RECOMENDACIONES
+
+- **Futuras mejoras:** Implementar la migración de la base de datos a un servidor centralizado en la nube para permitir el acceso concurrente de múltiples usuarios desde distintas sedes.
+- **Seguridad:** Incorporar un módulo de autenticación con cifrado de contraseñas y gestión de roles (Administrador, Operador, Lectores) para limitar el acceso a funciones críticas del sistema.
+- **Mantenimiento:** Configurar un sistema de auditoría y registro de errores (logs) que guarde un historial de las operaciones realizadas y facilite el mantenimiento preventivo de la aplicación.
+- **Nuevas funcionalidades:** Desarrollar un sistema de notificaciones automáticas por correo electrónico para avisar el vencimiento de préstamos e integrar un lector de código de barras para la búsqueda rápida de ejemplares.
+- **Optimización de rendimiento:** Aplicar paginación y optimización de consultas en los formularios con listas extensas de registros para mejorar los tiempos de respuesta de la interfaz gráfica.
+------------------------------------------------------------------------
+# 15. REFERENCIAS BIBLIOGRÁFICAS
+
+*Nota del autor:* El presente proyecto fue desarrollado de manera autónoma como un ejercicio de integración práctica de software, basado exclusivamente en las guías del curso, la especificación de requerimientos de la asignatura y la implementación directa de código. No se consultaron fuentes bibliográficas, teóricas ni investigaciones externas para la ejecución de la solución.

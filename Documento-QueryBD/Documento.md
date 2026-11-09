@@ -14,15 +14,15 @@
 
 ### Sistema de Gestión de Biblioteca
 
-**Presentado por:**\
+**Presentado por:**
 
-\[Laura Ximena Bejarano Acosta y Claudith Beltran Landero\]
+Laura Ximena Bejarano Acosta y Claudith Beltran Landero
 
-**Docente:**\
+**Docente:**
 Veronica Castro Munar
 
 **Fecha:**\
-Bogóta, 07, noviembre 2026
+Bogóta, 10, noviembre 2026
 
 ---------------------------------------------------------------------------
 
@@ -36,12 +36,12 @@ relacional, arquitectura por capas, operaciones CRUD, validaciones,
 manejo de excepciones y conexión con SQL Server.
 
 
-**Estudiante(s):** \[Laura Ximena Bejarano Acosta y Claudith Beltran Landero\]
-**Programa:** \[Ingenieria de sistemas\]\
-**Grupo:** \[Grupo\]\
-**Docente:** \[Veronica Castro Munar\]\
-**Institución:** \[Corporacion Unificada Nacional de la Edcucacion Superior - CUN\]\
-**Año:** \[2026\]
+**Estudiante(s):** Laura Ximena Bejarano Acosta y Claudith Beltran Landero\
+**Programa:** Ingenieria de sistemas\
+**Grupo:** 54463\
+**Docente:** Veronica Castro Munar\
+**Institución:** Corporacion Unificada Nacional de la Edcucacion Superior - CUN\
+**Año:** 2026
 
 
 ------------------------------------------------------------------------

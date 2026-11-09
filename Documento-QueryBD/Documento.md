@@ -893,49 +893,44 @@ En esta sección se incluyen las evidencias visuales del funcionamiento de la in
 
 ## 11.1 Menú principal
 
-![Menú principal](arrecifes.png.jpg)
+![Menú principal](imagen1.png)
 
 **Descripción:** Pantalla inicial del sistema que funciona como panel de control central. Proporciona un menú lateral de navegación para acceder a los módulos de Libros, Usuarios, Autores, Editoriales, Préstamos, Devoluciones y Reportes.
 
 ## 11.2 Gestión de libros
 
-![Gestión de libros](ruta/captura-libros.png)
+![Gestión de libros](libros.png)
 
 **Descripción:** Interfaz destinada a la administración del inventario de libros. Permite registrar nuevos títulos, consultar la lista completa, actualizar stock o información y realizar búsquedas por filtro.
 
 ## 11.3 Gestión de autores
 
-![Gestión de autores](ruta/captura-autores.png)
+![Gestión de autores](autores.png)
 
 **Descripción:** Ventana diseñada para la gestión de los autores del sistema, permitiendo su alta, modificación y consulta para vincularlos con el catálogo de libros.
 
 ## 11.4 Gestión de categorías / editoriales
 
-![Gestión de categorías](ruta/captura-categorias.png)
+![Gestión de categorías](editoriales.png)
 
 **Descripción:** Módulo de mantenimiento de clasificaciones y casas editoriales, permitiendo la organización temática de las colecciones bibliográficas.
 
 ## 11.5 Gestión de usuarios
 
-![Gestión de usuarios](ruta/captura-usuarios.png)
+![Gestión de usuarios](usuarios.png)
 
 **Descripción:** Pantalla para el registro y administración de los datos personales y de contacto de los lectores/socios habilitados para realizar préstamos.
 
 ## 11.6 Registro de préstamos
 
-![Registro de préstamos](ruta/captura-prestamos.png)
+![Registro de préstamos](prestamos.png)
 
 **Descripción:** Formulario transaccional para procesar las salidas de libros, vinculando el usuario con los libros solicitados y registrando la fecha límite de entrega.
 
-## 11.7 Registro de devoluciones
 
-![Registro de devoluciones](ruta/captura-devoluciones.png)
+## 11.7 Consultas y reportes
 
-**Descripción:** Pantalla encargada de registrar la devolución de libros, calculando automáticamente los días de retraso y restituyendo el stock del ejemplar al catálogo.
-
-## 11.8 Consultas y reportes
-
-![Consultas](ruta/captura-consultas.png)
+![Consultas](reportes.png)
 
 **Descripción:** Módulo de reportes consolidado que permite consultar el total de libros, estado de préstamos activos, usuarios en mora e historial transaccional del sistema.
 ------------------------------------------------------------------------

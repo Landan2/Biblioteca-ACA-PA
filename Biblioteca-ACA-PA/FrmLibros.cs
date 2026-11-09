@@ -220,6 +220,7 @@ namespace Biblioteca_ACA_PA
             txtCategoria.Clear();
             txtExistencias.Clear();
             txtISBN.Focus();
+            txtBuscar.Clear();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

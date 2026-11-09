@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             pnlMenu = new Panel();
             btnSalir = new FontAwesome.Sharp.IconButton();
             btnReportes = new FontAwesome.Sharp.IconButton();
@@ -277,13 +278,14 @@
             // 
             // picLogo
             // 
-            picLogo.BackColor = Color.DarkGray;
+            picLogo.BackColor = Color.Gainsboro;
             picLogo.BackgroundImageLayout = ImageLayout.Zoom;
+            picLogo.Image = (Image)resources.GetObject("picLogo.Image");
             picLogo.Location = new Point(3, 3);
             picLogo.Margin = new Padding(3, 4, 3, 4);
             picLogo.Name = "picLogo";
             picLogo.Size = new Size(111, 84);
-            picLogo.SizeMode = PictureBoxSizeMode.StretchImage;
+            picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             picLogo.TabIndex = 2;
             picLogo.TabStop = false;
             // 
@@ -293,7 +295,7 @@
             lblSubtitulo.BackColor = Color.Transparent;
             lblSubtitulo.Font = new Font("Sitka Heading", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblSubtitulo.ForeColor = Color.Maroon;
-            lblSubtitulo.Location = new Point(134, 45);
+            lblSubtitulo.Location = new Point(130, 42);
             lblSubtitulo.Name = "lblSubtitulo";
             lblSubtitulo.Size = new Size(142, 23);
             lblSubtitulo.TabIndex = 1;
@@ -305,7 +307,7 @@
             lblTitulo.BackColor = Color.Transparent;
             lblTitulo.Font = new Font("Sitka Heading", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitulo.ForeColor = Color.Maroon;
-            lblTitulo.Location = new Point(117, 3);
+            lblTitulo.Location = new Point(114, 0);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(180, 42);
             lblTitulo.TabIndex = 0;

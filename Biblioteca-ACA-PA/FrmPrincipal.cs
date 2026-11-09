@@ -10,8 +10,11 @@ namespace Biblioteca_ACA_PA
             InitializeComponent(); 
 
             AbrirFormulario(new FrmInicio());
-        }  
 
+        
+        }
+
+     
         private void AbrirFormulario(Form formulario)
         {
             pnlContenido.Controls.Clear();

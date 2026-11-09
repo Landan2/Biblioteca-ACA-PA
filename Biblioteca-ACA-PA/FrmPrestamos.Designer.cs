@@ -58,9 +58,9 @@
             pnlPrestamos.Controls.Add(lblPrestamos);
             pnlPrestamos.Dock = DockStyle.Top;
             pnlPrestamos.Location = new Point(0, 0);
-            pnlPrestamos.Margin = new Padding(4, 2, 4, 2);
+            pnlPrestamos.Margin = new Padding(3, 2, 3, 2);
             pnlPrestamos.Name = "pnlPrestamos";
-            pnlPrestamos.Size = new Size(1065, 75);
+            pnlPrestamos.Size = new Size(1054, 75);
             pnlPrestamos.TabIndex = 0;
             // 
             // lblPrestamos
@@ -68,8 +68,7 @@
             lblPrestamos.AutoSize = true;
             lblPrestamos.Font = new Font("Sitka Display", 26.2499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPrestamos.ForeColor = Color.Maroon;
-            lblPrestamos.Location = new Point(359, 9);
-            lblPrestamos.Margin = new Padding(4, 0, 4, 0);
+            lblPrestamos.Location = new Point(379, 9);
             lblPrestamos.Name = "lblPrestamos";
             lblPrestamos.Size = new Size(343, 50);
             lblPrestamos.TabIndex = 0;
@@ -92,21 +91,23 @@
             pnlDatosPrestamos.Controls.Add(lblUsuarioPrestamos);
             pnlDatosPrestamos.Dock = DockStyle.Top;
             pnlDatosPrestamos.Location = new Point(0, 75);
-            pnlDatosPrestamos.Margin = new Padding(4, 2, 4, 2);
+            pnlDatosPrestamos.Margin = new Padding(3, 2, 3, 2);
             pnlDatosPrestamos.Name = "pnlDatosPrestamos";
-            pnlDatosPrestamos.Size = new Size(1065, 322);
+            pnlDatosPrestamos.Size = new Size(1054, 305);
             pnlDatosPrestamos.TabIndex = 1;
             // 
             // btnCancelarP
             // 
             btnCancelarP.Font = new Font("Sitka Banner Semibold", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCancelarP.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnCancelarP.IconColor = Color.Black;
+            btnCancelarP.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            btnCancelarP.IconColor = Color.Maroon;
             btnCancelarP.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnCancelarP.Location = new Point(839, 278);
-            btnCancelarP.Margin = new Padding(4, 2, 4, 2);
+            btnCancelarP.IconSize = 25;
+            btnCancelarP.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCancelarP.Location = new Point(815, 254);
+            btnCancelarP.Margin = new Padding(3, 2, 3, 2);
             btnCancelarP.Name = "btnCancelarP";
-            btnCancelarP.Size = new Size(122, 38);
+            btnCancelarP.Size = new Size(111, 38);
             btnCancelarP.TabIndex = 9;
             btnCancelarP.Text = "Cancelar";
             btnCancelarP.UseVisualStyleBackColor = true;
@@ -118,23 +119,25 @@
             dtpFechaDevolucion.Checked = false;
             dtpFechaDevolucion.Font = new Font("Calisto MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpFechaDevolucion.Format = DateTimePickerFormat.Short;
-            dtpFechaDevolucion.Location = new Point(531, 195);
-            dtpFechaDevolucion.Margin = new Padding(4, 2, 4, 2);
+            dtpFechaDevolucion.Location = new Point(530, 189);
+            dtpFechaDevolucion.Margin = new Padding(3, 2, 3, 2);
             dtpFechaDevolucion.Name = "dtpFechaDevolucion";
             dtpFechaDevolucion.ShowCheckBox = true;
-            dtpFechaDevolucion.Size = new Size(288, 26);
+            dtpFechaDevolucion.Size = new Size(231, 26);
             dtpFechaDevolucion.TabIndex = 7;
             // 
             // btnEliminarPrestamo
             // 
             btnEliminarPrestamo.Font = new Font("Sitka Banner Semibold", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEliminarPrestamo.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnEliminarPrestamo.IconColor = Color.Black;
+            btnEliminarPrestamo.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            btnEliminarPrestamo.IconColor = Color.Maroon;
             btnEliminarPrestamo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEliminarPrestamo.Location = new Point(656, 278);
-            btnEliminarPrestamo.Margin = new Padding(4, 2, 4, 2);
+            btnEliminarPrestamo.IconSize = 25;
+            btnEliminarPrestamo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEliminarPrestamo.Location = new Point(677, 254);
+            btnEliminarPrestamo.Margin = new Padding(3, 2, 3, 2);
             btnEliminarPrestamo.Name = "btnEliminarPrestamo";
-            btnEliminarPrestamo.Size = new Size(122, 38);
+            btnEliminarPrestamo.Size = new Size(112, 38);
             btnEliminarPrestamo.TabIndex = 8;
             btnEliminarPrestamo.Text = "Eliminar";
             btnEliminarPrestamo.UseVisualStyleBackColor = true;
@@ -145,24 +148,26 @@
             dtpFechaPrestamo.CalendarFont = new Font("Calisto MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpFechaPrestamo.Font = new Font("Calisto MT", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             dtpFechaPrestamo.Format = DateTimePickerFormat.Short;
-            dtpFechaPrestamo.Location = new Point(531, 139);
-            dtpFechaPrestamo.Margin = new Padding(4, 2, 4, 2);
+            dtpFechaPrestamo.Location = new Point(530, 133);
+            dtpFechaPrestamo.Margin = new Padding(3, 2, 3, 2);
             dtpFechaPrestamo.Name = "dtpFechaPrestamo";
             dtpFechaPrestamo.RightToLeft = RightToLeft.No;
-            dtpFechaPrestamo.Size = new Size(288, 26);
+            dtpFechaPrestamo.Size = new Size(231, 26);
             dtpFechaPrestamo.TabIndex = 6;
             dtpFechaPrestamo.Value = new DateTime(2026, 11, 8, 11, 9, 0, 0);
             // 
             // btnEditarPrestamo
             // 
             btnEditarPrestamo.Font = new Font("Sitka Banner Semibold", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnEditarPrestamo.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnEditarPrestamo.IconColor = Color.Black;
+            btnEditarPrestamo.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            btnEditarPrestamo.IconColor = Color.Maroon;
             btnEditarPrestamo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnEditarPrestamo.Location = new Point(490, 278);
-            btnEditarPrestamo.Margin = new Padding(4, 2, 4, 2);
+            btnEditarPrestamo.IconSize = 25;
+            btnEditarPrestamo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEditarPrestamo.Location = new Point(530, 254);
+            btnEditarPrestamo.Margin = new Padding(3, 2, 3, 2);
             btnEditarPrestamo.Name = "btnEditarPrestamo";
-            btnEditarPrestamo.Size = new Size(122, 38);
+            btnEditarPrestamo.Size = new Size(101, 38);
             btnEditarPrestamo.TabIndex = 7;
             btnEditarPrestamo.Text = "Editar ";
             btnEditarPrestamo.UseVisualStyleBackColor = true;
@@ -171,13 +176,15 @@
             // btnGuardarPrestamo
             // 
             btnGuardarPrestamo.Font = new Font("Sitka Banner Semibold", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnGuardarPrestamo.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnGuardarPrestamo.IconColor = Color.Black;
+            btnGuardarPrestamo.IconChar = FontAwesome.Sharp.IconChar.Save;
+            btnGuardarPrestamo.IconColor = Color.Maroon;
             btnGuardarPrestamo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnGuardarPrestamo.Location = new Point(317, 278);
-            btnGuardarPrestamo.Margin = new Padding(4, 2, 4, 2);
+            btnGuardarPrestamo.IconSize = 25;
+            btnGuardarPrestamo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnGuardarPrestamo.Location = new Point(380, 254);
+            btnGuardarPrestamo.Margin = new Padding(3, 2, 3, 2);
             btnGuardarPrestamo.Name = "btnGuardarPrestamo";
-            btnGuardarPrestamo.Size = new Size(122, 38);
+            btnGuardarPrestamo.Size = new Size(115, 38);
             btnGuardarPrestamo.TabIndex = 6;
             btnGuardarPrestamo.Text = "Guardar ";
             btnGuardarPrestamo.UseVisualStyleBackColor = true;
@@ -186,22 +193,24 @@
             // cmbLibro
             // 
             cmbLibro.FormattingEnabled = true;
-            cmbLibro.Location = new Point(531, 81);
-            cmbLibro.Margin = new Padding(4, 2, 4, 2);
+            cmbLibro.Location = new Point(530, 74);
+            cmbLibro.Margin = new Padding(3, 2, 3, 2);
             cmbLibro.Name = "cmbLibro";
-            cmbLibro.Size = new Size(288, 31);
+            cmbLibro.Size = new Size(231, 31);
             cmbLibro.TabIndex = 5;
             // 
             // btnNuevoPrestamo
             // 
             btnNuevoPrestamo.Font = new Font("Sitka Banner Semibold", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNuevoPrestamo.IconChar = FontAwesome.Sharp.IconChar.None;
-            btnNuevoPrestamo.IconColor = Color.Black;
+            btnNuevoPrestamo.IconChar = FontAwesome.Sharp.IconChar.Add;
+            btnNuevoPrestamo.IconColor = Color.Maroon;
             btnNuevoPrestamo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            btnNuevoPrestamo.Location = new Point(89, 278);
-            btnNuevoPrestamo.Margin = new Padding(4, 2, 4, 2);
+            btnNuevoPrestamo.IconSize = 25;
+            btnNuevoPrestamo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNuevoPrestamo.Location = new Point(183, 254);
+            btnNuevoPrestamo.Margin = new Padding(3, 2, 3, 2);
             btnNuevoPrestamo.Name = "btnNuevoPrestamo";
-            btnNuevoPrestamo.Size = new Size(176, 38);
+            btnNuevoPrestamo.Size = new Size(156, 38);
             btnNuevoPrestamo.TabIndex = 5;
             btnNuevoPrestamo.Text = "Nuevo Prestamo";
             btnNuevoPrestamo.UseVisualStyleBackColor = true;
@@ -210,18 +219,17 @@
             // cmbUsuario
             // 
             cmbUsuario.FormattingEnabled = true;
-            cmbUsuario.Location = new Point(531, 24);
-            cmbUsuario.Margin = new Padding(4, 2, 4, 2);
+            cmbUsuario.Location = new Point(530, 18);
+            cmbUsuario.Margin = new Padding(3, 2, 3, 2);
             cmbUsuario.Name = "cmbUsuario";
-            cmbUsuario.Size = new Size(288, 31);
+            cmbUsuario.Size = new Size(231, 31);
             cmbUsuario.TabIndex = 4;
             // 
             // lblFechaDevolucion
             // 
             lblFechaDevolucion.AutoSize = true;
             lblFechaDevolucion.Font = new Font("Sitka Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFechaDevolucion.Location = new Point(262, 200);
-            lblFechaDevolucion.Margin = new Padding(4, 0, 4, 0);
+            lblFechaDevolucion.Location = new Point(354, 194);
             lblFechaDevolucion.Name = "lblFechaDevolucion";
             lblFechaDevolucion.Size = new Size(134, 23);
             lblFechaDevolucion.TabIndex = 3;
@@ -231,8 +239,7 @@
             // 
             lblFechaPrestamos.AutoSize = true;
             lblFechaPrestamos.Font = new Font("Sitka Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFechaPrestamos.Location = new Point(262, 144);
-            lblFechaPrestamos.Margin = new Padding(4, 0, 4, 0);
+            lblFechaPrestamos.Location = new Point(354, 133);
             lblFechaPrestamos.Name = "lblFechaPrestamos";
             lblFechaPrestamos.Size = new Size(123, 23);
             lblFechaPrestamos.TabIndex = 2;
@@ -242,8 +249,7 @@
             // 
             lblLibroPrestado.AutoSize = true;
             lblLibroPrestado.Font = new Font("Sitka Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLibroPrestado.Location = new Point(262, 85);
-            lblLibroPrestado.Margin = new Padding(4, 0, 4, 0);
+            lblLibroPrestado.Location = new Point(354, 79);
             lblLibroPrestado.Name = "lblLibroPrestado";
             lblLibroPrestado.Size = new Size(52, 23);
             lblLibroPrestado.TabIndex = 1;
@@ -253,8 +259,7 @@
             // 
             lblUsuarioPrestamos.AutoSize = true;
             lblUsuarioPrestamos.Font = new Font("Sitka Display", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsuarioPrestamos.Location = new Point(262, 26);
-            lblUsuarioPrestamos.Margin = new Padding(4, 0, 4, 0);
+            lblUsuarioPrestamos.Location = new Point(354, 20);
             lblUsuarioPrestamos.Name = "lblUsuarioPrestamos";
             lblUsuarioPrestamos.Size = new Size(70, 23);
             lblUsuarioPrestamos.TabIndex = 0;
@@ -264,10 +269,10 @@
             // 
             pnlListaPrestamos.Controls.Add(dgvPrestamos);
             pnlListaPrestamos.Dock = DockStyle.Fill;
-            pnlListaPrestamos.Location = new Point(0, 397);
-            pnlListaPrestamos.Margin = new Padding(4, 2, 4, 2);
+            pnlListaPrestamos.Location = new Point(0, 380);
+            pnlListaPrestamos.Margin = new Padding(3, 2, 3, 2);
             pnlListaPrestamos.Name = "pnlListaPrestamos";
-            pnlListaPrestamos.Size = new Size(1065, 352);
+            pnlListaPrestamos.Size = new Size(1054, 369);
             pnlListaPrestamos.TabIndex = 2;
             // 
             // dgvPrestamos
@@ -275,27 +280,27 @@
             dgvPrestamos.AllowUserToAddRows = false;
             dgvPrestamos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPrestamos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvPrestamos.Location = new Point(-4, 4);
-            dgvPrestamos.Margin = new Padding(4, 2, 4, 2);
+            dgvPrestamos.Location = new Point(3, 13);
+            dgvPrestamos.Margin = new Padding(3, 2, 3, 2);
             dgvPrestamos.MultiSelect = false;
             dgvPrestamos.Name = "dgvPrestamos";
             dgvPrestamos.ReadOnly = true;
             dgvPrestamos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvPrestamos.Size = new Size(1065, 234);
+            dgvPrestamos.Size = new Size(1048, 225);
             dgvPrestamos.TabIndex = 0;
             dgvPrestamos.CellDoubleClick += dgvPrestamos_CellDoubleClick;
             // 
             // FrmPrestamos
             // 
-            AutoScaleDimensions = new SizeF(10F, 23F);
+            AutoScaleDimensions = new SizeF(8F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            ClientSize = new Size(1065, 749);
+            ClientSize = new Size(1054, 749);
             Controls.Add(pnlListaPrestamos);
             Controls.Add(pnlDatosPrestamos);
             Controls.Add(pnlPrestamos);
-            Font = new Font("Sitka Small", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            Margin = new Padding(4, 5, 4, 5);
+            Font = new Font("Sitka Banner", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Margin = new Padding(3, 5, 3, 5);
             Name = "FrmPrestamos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmPrestamos";

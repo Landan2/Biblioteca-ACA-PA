@@ -533,7 +533,12 @@ namespace Biblioteca_ACA_PA
 
         }
 
-        
+        private void pnlDatos_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
 
 
 

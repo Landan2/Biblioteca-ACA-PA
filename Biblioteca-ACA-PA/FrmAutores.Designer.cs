@@ -60,7 +60,7 @@
             pnlAutores.Dock = DockStyle.Top;
             pnlAutores.Location = new Point(0, 0);
             pnlAutores.Name = "pnlAutores";
-            pnlAutores.Size = new Size(1059, 61);
+            pnlAutores.Size = new Size(1059, 75);
             pnlAutores.TabIndex = 0;
             // 
             // lblAutores
@@ -69,7 +69,7 @@
             lblAutores.BackColor = Color.Transparent;
             lblAutores.Font = new Font("Sitka Heading", 26.2499962F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAutores.ForeColor = Color.Maroon;
-            lblAutores.Location = new Point(404, 8);
+            lblAutores.Location = new Point(378, 9);
             lblAutores.Name = "lblAutores";
             lblAutores.Size = new Size(314, 50);
             lblAutores.TabIndex = 0;
@@ -83,18 +83,18 @@
             pnlBuscarA.Controls.Add(txtBuscarA);
             pnlBuscarA.Controls.Add(lblBuscaarA);
             pnlBuscarA.Dock = DockStyle.Top;
-            pnlBuscarA.Location = new Point(0, 61);
+            pnlBuscarA.Location = new Point(0, 75);
             pnlBuscarA.Name = "pnlBuscarA";
-            pnlBuscarA.Size = new Size(1059, 58);
+            pnlBuscarA.Size = new Size(1059, 52);
             pnlBuscarA.TabIndex = 1;
             // 
             // btnBuscarA
             // 
             btnBuscarA.AutoSize = true;
             btnBuscarA.ForeColor = Color.DarkRed;
-            btnBuscarA.Location = new Point(675, 15);
+            btnBuscarA.Location = new Point(632, 13);
             btnBuscarA.Name = "btnBuscarA";
-            btnBuscarA.Size = new Size(81, 31);
+            btnBuscarA.Size = new Size(71, 31);
             btnBuscarA.TabIndex = 2;
             btnBuscarA.Text = "Buscar";
             btnBuscarA.UseVisualStyleBackColor = true;
@@ -103,17 +103,17 @@
             // txtBuscarA
             // 
             txtBuscarA.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscarA.Location = new Point(464, 15);
+            txtBuscarA.Location = new Point(446, 16);
             txtBuscarA.Name = "txtBuscarA";
-            txtBuscarA.Size = new Size(175, 27);
+            txtBuscarA.Size = new Size(154, 27);
             txtBuscarA.TabIndex = 1;
             // 
             // lblBuscaarA
             // 
             lblBuscaarA.AutoSize = true;
             lblBuscaarA.Font = new Font("Sitka Banner", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBuscaarA.ForeColor = Color.DarkRed;
-            lblBuscaarA.Location = new Point(364, 16);
+            lblBuscaarA.ForeColor = Color.Black;
+            lblBuscaarA.Location = new Point(358, 17);
             lblBuscaarA.Name = "lblBuscaarA";
             lblBuscaarA.Size = new Size(64, 23);
             lblBuscaarA.TabIndex = 0;
@@ -128,32 +128,32 @@
             pnlDatosA.Controls.Add(lblApellidoA);
             pnlDatosA.Controls.Add(lblNombreA);
             pnlDatosA.Dock = DockStyle.Top;
-            pnlDatosA.Location = new Point(0, 119);
+            pnlDatosA.Location = new Point(0, 127);
             pnlDatosA.Name = "pnlDatosA";
-            pnlDatosA.Size = new Size(1059, 159);
+            pnlDatosA.Size = new Size(1059, 136);
             pnlDatosA.TabIndex = 2;
             // 
             // txtApellidoA
             // 
             txtApellidoA.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtApellidoA.Location = new Point(463, 86);
+            txtApellidoA.Location = new Point(446, 77);
             txtApellidoA.Name = "txtApellidoA";
-            txtApellidoA.Size = new Size(175, 26);
+            txtApellidoA.Size = new Size(154, 26);
             txtApellidoA.TabIndex = 3;
             // 
             // txtNombreA
             // 
             txtNombreA.Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreA.Location = new Point(463, 33);
+            txtNombreA.Location = new Point(446, 24);
             txtNombreA.Name = "txtNombreA";
-            txtNombreA.Size = new Size(175, 26);
+            txtNombreA.Size = new Size(154, 26);
             txtNombreA.TabIndex = 2;
             // 
             // lblApellidoA
             // 
             lblApellidoA.AutoSize = true;
             lblApellidoA.Font = new Font("Sitka Banner", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblApellidoA.Location = new Point(359, 91);
+            lblApellidoA.Location = new Point(355, 82);
             lblApellidoA.Name = "lblApellidoA";
             lblApellidoA.Size = new Size(67, 23);
             lblApellidoA.TabIndex = 2;
@@ -164,7 +164,7 @@
             // 
             lblNombreA.AutoSize = true;
             lblNombreA.Font = new Font("Sitka Banner", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNombreA.Location = new Point(359, 38);
+            lblNombreA.Location = new Point(355, 29);
             lblNombreA.Name = "lblNombreA";
             lblNombreA.Size = new Size(69, 23);
             lblNombreA.TabIndex = 1;
@@ -178,23 +178,22 @@
             pnlBotonesA.Controls.Add(btnEditarA);
             pnlBotonesA.Controls.Add(btnGuardarA);
             pnlBotonesA.Controls.Add(btnNuevoA);
-            pnlBotonesA.Location = new Point(103, 284);
+            pnlBotonesA.Location = new Point(139, 269);
             pnlBotonesA.Name = "pnlBotonesA";
-            pnlBotonesA.Size = new Size(893, 66);
+            pnlBotonesA.Size = new Size(781, 66);
             pnlBotonesA.TabIndex = 3;
             // 
             // btnCancelarA
             // 
             btnCancelarA.BackColor = Color.WhiteSmoke;
-            btnCancelarA.FlatStyle = FlatStyle.Flat;
-            btnCancelarA.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
-            btnCancelarA.IconColor = Color.Black;
+            btnCancelarA.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            btnCancelarA.IconColor = Color.Maroon;
             btnCancelarA.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnCancelarA.IconSize = 25;
             btnCancelarA.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelarA.Location = new Point(706, 17);
+            btnCancelarA.Location = new Point(618, 17);
             btnCancelarA.Name = "btnCancelarA";
-            btnCancelarA.Size = new Size(121, 33);
+            btnCancelarA.Size = new Size(110, 33);
             btnCancelarA.TabIndex = 4;
             btnCancelarA.Text = "Cancelar";
             btnCancelarA.TextAlign = ContentAlignment.TopCenter;
@@ -204,15 +203,14 @@
             // btnEliminarA
             // 
             btnEliminarA.BackColor = Color.WhiteSmoke;
-            btnEliminarA.FlatStyle = FlatStyle.Flat;
-            btnEliminarA.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
-            btnEliminarA.IconColor = Color.Black;
+            btnEliminarA.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            btnEliminarA.IconColor = Color.Maroon;
             btnEliminarA.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEliminarA.IconSize = 25;
             btnEliminarA.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEliminarA.Location = new Point(515, 17);
+            btnEliminarA.Location = new Point(451, 17);
             btnEliminarA.Name = "btnEliminarA";
-            btnEliminarA.Size = new Size(153, 33);
+            btnEliminarA.Size = new Size(144, 33);
             btnEliminarA.TabIndex = 3;
             btnEliminarA.Text = "Eliminar Autor";
             btnEliminarA.TextAlign = ContentAlignment.TopCenter;
@@ -222,15 +220,14 @@
             // btnEditarA
             // 
             btnEditarA.BackColor = Color.WhiteSmoke;
-            btnEditarA.FlatStyle = FlatStyle.Flat;
-            btnEditarA.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
-            btnEditarA.IconColor = Color.Black;
+            btnEditarA.IconChar = FontAwesome.Sharp.IconChar.Edit;
+            btnEditarA.IconColor = Color.Maroon;
             btnEditarA.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnEditarA.IconSize = 25;
             btnEditarA.ImageAlign = ContentAlignment.MiddleLeft;
-            btnEditarA.Location = new Point(346, 17);
+            btnEditarA.Location = new Point(303, 17);
             btnEditarA.Name = "btnEditarA";
-            btnEditarA.Size = new Size(141, 33);
+            btnEditarA.Size = new Size(123, 33);
             btnEditarA.TabIndex = 2;
             btnEditarA.Text = "Editar Autor";
             btnEditarA.TextAlign = ContentAlignment.TopCenter;
@@ -240,15 +237,14 @@
             // btnGuardarA
             // 
             btnGuardarA.BackColor = Color.WhiteSmoke;
-            btnGuardarA.FlatStyle = FlatStyle.Flat;
-            btnGuardarA.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
-            btnGuardarA.IconColor = Color.Black;
+            btnGuardarA.IconChar = FontAwesome.Sharp.IconChar.Save;
+            btnGuardarA.IconColor = Color.Maroon;
             btnGuardarA.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnGuardarA.IconSize = 25;
             btnGuardarA.ImageAlign = ContentAlignment.MiddleLeft;
-            btnGuardarA.Location = new Point(200, 17);
+            btnGuardarA.Location = new Point(175, 17);
             btnGuardarA.Name = "btnGuardarA";
-            btnGuardarA.Size = new Size(123, 33);
+            btnGuardarA.Size = new Size(108, 33);
             btnGuardarA.TabIndex = 1;
             btnGuardarA.Text = "Guardar ";
             btnGuardarA.TextAlign = ContentAlignment.TopCenter;
@@ -258,15 +254,14 @@
             // btnNuevoA
             // 
             btnNuevoA.BackColor = Color.WhiteSmoke;
-            btnNuevoA.FlatStyle = FlatStyle.Flat;
-            btnNuevoA.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            btnNuevoA.IconChar = FontAwesome.Sharp.IconChar.Add;
             btnNuevoA.IconColor = Color.DarkRed;
             btnNuevoA.IconFont = FontAwesome.Sharp.IconFont.Auto;
             btnNuevoA.IconSize = 25;
             btnNuevoA.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNuevoA.Location = new Point(32, 17);
+            btnNuevoA.Location = new Point(28, 17);
             btnNuevoA.Name = "btnNuevoA";
-            btnNuevoA.Size = new Size(148, 33);
+            btnNuevoA.Size = new Size(130, 33);
             btnNuevoA.TabIndex = 0;
             btnNuevoA.Text = "Nuevo Autor";
             btnNuevoA.TextAlign = ContentAlignment.TopCenter;
@@ -279,15 +274,15 @@
             dgvAutores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvAutores.BackgroundColor = Color.Silver;
             dgvAutores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAutores.Location = new Point(163, 356);
+            dgvAutores.Location = new Point(38, 341);
             dgvAutores.Name = "dgvAutores";
-            dgvAutores.Size = new Size(735, 344);
+            dgvAutores.Size = new Size(981, 344);
             dgvAutores.TabIndex = 4;
             dgvAutores.CellDoubleClick += dgvAutores_CellDoubleClick;
             // 
             // FrmAutores
             // 
-            AutoScaleDimensions = new SizeF(8F, 21F);
+            AutoScaleDimensions = new SizeF(7F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1059, 749);
             Controls.Add(dgvAutores);
@@ -295,7 +290,7 @@
             Controls.Add(pnlDatosA);
             Controls.Add(pnlBuscarA);
             Controls.Add(pnlAutores);
-            Font = new Font("Sitka Banner Semibold", 11.249999F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Font = new Font("Sitka Banner", 11.249999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(3, 4, 3, 4);
             Name = "FrmAutores";
             StartPosition = FormStartPosition.CenterScreen;

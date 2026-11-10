@@ -1061,22 +1061,22 @@ Insertar capturas que evidencien:
 
 -   Creación del repositorio.
 
-![Evidencia repositorio](repositorio.png)
+![Evidencia repositorio](repositorio4.png)
 
 -   Commits realizados.
 
-![Evidencia repositorio](repositorio2.png)
-
-![Evidencia repositorio](0beebe4b-501e-4ba0-9fd2-1fa701808e56.png)
-
 ![Evidencia repositorio](repositorio.png)
+
+![Evidencia repositorio](0beebe4b-501e-4ba0-9fd2-1fa701808e56.jpeg)
+
+![Evidencia repositorio](repositorio5.png)
 
 
 -   Organización del proyecto.
+
 -   Publicación del código.
 
 -   README.md.
 
-## Anexo D. Otras evidencias
+![Evidencia repositorio](Redmi.md.png)
 
-\[Agregar cualquier evidencia adicional relevante.\]

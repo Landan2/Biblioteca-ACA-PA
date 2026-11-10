@@ -962,27 +962,52 @@ En esta sección se adjuntan las capturas de pantalla que respaldan la ejecució
 
 ### Prueba CP01: Registro exitoso de libro
 
-![Evidencia CP01](ruta/prueba01.png)
+![Evidencia CP01](registro_libro.png) 
 
-**Resultado:** Se completó el formulario con un título, autor, editorial y stock válidos. Al presionar el botón de guardado, la aplicación insertó correctamente el registro en la base de datos SQL Server y actualizó en tiempo real la lista de libros.
+![Evidencia CP01](prueba_libro.png) 
+
+
+**Resultado:** Se completó el formulario con un título, autor, editorial y stock válidos. Al presionar el botón de guardado, la aplicación insertó correctamente el registro en la base de datos SQL Server y actualizó en tiempo real la lista de libros. 
 
 ### Prueba CP02: Validación de datos obligatorios / Código duplicado
 
-![Evidencia CP02](ruta/prueba02.png)
+![Evidencia CP02](duplicado.png)
 
 **Resultado:** Se intentó registrar un libro omitiendo campos requeridos. El sistema capturó la validación, impidió la inserción en la base de datos y desplegó una alerta notificando los campos faltantes al usuario.
+### Prueba CP03: Registro de Usuario y busqueda
 
-### Prueba CP03: Registro de préstamo y actualización de stock
+![Evidencia CP04](registro_usuario.png)
 
-![Evidencia CP03](ruta/prueba03.png)
+![Evidencia CP04](buscar_usuario.png)
+
+### Prueba CP04: Registro de préstamo y actualización de stock
+
+![Evidencia CP04](registro_prestamo.png)
+
+![Evidencia CP04](prestamo_sin_stock.png)
+
 
 **Resultado:** Se seleccionó un usuario activo y un libro disponible. Al confirmar la transacción, se generó el préstamo y el stock del ejemplar disminuyó automáticamente en el inventario.
 
-### Prueba CP04: Procesamiento de devolución 
+### Prueba CP05: Procesamiento de devolución y cálculo de mora
 
-![Evidencia CP04](ruta/prueba04.png)
+![Evidencia CP05](registro_devolucion.png)
 
-**Resultado:** Se registro que el libro quedo en estado Devuelto despues de registrar ese campo de devolución. 
+![Evidencia CP05](registro_devolucion2.png)
+
+**Resultado:** Se procesó la devolución de un libro entregado con fecha posterior a la estimada. El sistema calculó los días de retraso, generó la multa correspondiente y restituyó la disponibilidad del ejemplar.
+
+### Prueba CP06: Realizar consultas de reportes
+
+![Evidencia CP06](consulta_reportes.png)
+
+![Evidencia CP06](consulta_reportes2.png)
+
+![Evidencia CP06](consulta_reportes3.png)
+
+![Evidencia CP06](consulta_reportes4.png)
+
+**Resultado:** Se accedió al módulo de consultas/reportes y se solicitó la generación del informe de préstamos activos e historial transaccional. El sistema procesó las consultas sobre la base de datos `Biblioteca-ACA-ProgramacionA` y presentó los resultados consolidados de forma precisa en el panel[cite: 1].
 
 ------------------------------------------------------------------------
 
@@ -1016,3 +1041,42 @@ Se superaron las dificultades técnicas de configuración en el motor de base de
 # 15. REFERENCIAS BIBLIOGRÁFICAS
 
 *Nota del autor:* El presente proyecto fue desarrollado de manera autónoma como un ejercicio de integración práctica de software, basado exclusivamente en las guías del curso, la especificación de requerimientos de la asignatura y la implementación directa de código. No se consultaron fuentes bibliográficas, teóricas ni investigaciones externas para la ejecución de la solución.
+
+------------------------------------------------------------------------
+# ANEXOS
+
+## Anexo A. Repositorio GitHub
+
+**Repositorio:** https://github.com/Landan2/Biblioteca-ACA-PA
+
+## Anexo B. Script de base de datos
+
+**Archivo:** `SQLQueryBasededatosBiblioteca.sql`
+
+![Evidencia repositorio](SQLQueryBasededatosBiblioteca.png)
+
+## Anexo C. Evidencia de Git y GitHub
+
+Insertar capturas que evidencien:
+
+-   Creación del repositorio.
+
+![Evidencia repositorio](repositorio.png)
+
+-   Commits realizados.
+
+![Evidencia repositorio](repositorio2.png)
+
+![Evidencia repositorio](0beebe4b-501e-4ba0-9fd2-1fa701808e56.png)
+
+![Evidencia repositorio](repositorio.png)
+
+
+-   Organización del proyecto.
+-   Publicación del código.
+
+-   README.md.
+
+## Anexo D. Otras evidencias
+
+\[Agregar cualquier evidencia adicional relevante.\]

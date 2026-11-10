@@ -6,9 +6,9 @@
 
 ## PORTADA
 
-**CORPORACION UNFICADA NACIONAL DE LA EDUCACION SUPERIOR**
+**CORPORACIÓN UNFICADA NACIONAL DE LA EDUCACIÓN SUPERIOR**
 
-**INGENIERIA DE SISTEMAS / PROGRAMACION AVANZADA**
+**INGENIERIA DE SISTEMAS / PROGRAMACIÓN AVANZADA**
 
 ### ACA - Programación Avanzada
 
@@ -19,10 +19,10 @@
 Laura Ximena Bejarano Acosta y Claudith Beltran Landero
 
 **Docente:**
-Veronica Castro Munar
+Verónica Castro Munar
 
 **Fecha:**\
-Bogóta, 10, noviembre 2026
+Bogotá, 10, noviembre 2026
 
 ---------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ manejo de excepciones y conexión con SQL Server.
 **Programa:** Ingenieria de sistemas\
 **Grupo:** 54463\
 **Docente:** Veronica Castro Munar\
-**Institución:** Corporacion Unificada Nacional de la Edcucacion Superior - CUN\
+**Institución:** Corporación Unificada Nacional de la Edcucación Superior - CUN\
 **Año:** 2026
 
 
@@ -72,7 +72,7 @@ manejo de excepciones y conexión con SQL Server.
 
 # 1. INTRODUCCIÓN
 
-La construcción de aplicaciones de escritorio orientadas a la administración de datos requiere una arquitectura sólida que garantice la estabilidad del sistema y la fluidez del usuario. En el presente documento, este trabajo aborda la implementación técnica de un Sistema de Gestión de Biblioteca desarrollado en C# con Windows Forms y almacenamiento en SQL Server, aplicando principios de Programación Orientada a Objetos y una arquitectura por capas.A lo largo del desarrollo se implementan componentes clave como el control transaccional de préstamos y devoluciones, el filtrado y actualización dinámica del catálogo bibliográfico y la creación de consultas complejas para la emisión de reportes.
+La construcción de aplicaciones de escritorio orientadas a la administración de datos requiere una arquitectura sólida que garantice la estabilidad del sistema y la fluidez del usuario. En el presente documento, este trabajo aborda la implementación técnica de un Sistema de Gestión de Biblioteca desarrollado en C# con Windows Forms y almacenamiento en SQL Server, aplicando principios de Programación Orientada a Objetos y una arquitectura por capas. A lo largo del desarrollo se implementan componentes clave como el control transaccional de préstamos y devoluciones, el filtrado y actualización dinámica del catálogo bibliográfico y la creación de consultas complejas para la emisión de reportes.
 
 La aplicación permite gestionar **libros, autores, editoriales, préstamos, reportes.** El resultado es un producto software funcional, diseñado bajo estándares de programación modular que facilitan el mantenimiento y escalabilidad del sistema.
 
@@ -83,7 +83,7 @@ La aplicación permite gestionar **libros, autores, editoriales, préstamos, rep
 
 ## 2.1 Objetivo general
 
-Desarrollar e implementar un Sistema de Gestión de Biblioteca mediante una aplicación de escritorio en **C#, Windows Forms y SQL Server**, bajo una arquitectura modular que garantice la estabilidad del sistema, la consistencia de los datos y la automatización eficiente de los procesos de inventario, préstamos y generación de reportes., utilizando Programación Orientada a
+Desarrollar e implementar un Sistema de Gestión de Biblioteca mediante una aplicación de escritorio en **C#, Windows Forms y SQL Server**, bajo una arquitectura modular que garantice la estabilidad del sistema, la consistencia de los datos y la automatización eficiente de los procesos de inventario, préstamos y generación de reportes, utilizando Programación Orientada a
 Objetos, una base de datos relacional y una arquitectura por capas.
 
 
@@ -104,7 +104,7 @@ En la actualidad, la institución educativa enfrenta importantes limitaciones op
 
 Asimismo, la falta de una arquitectura de datos estructurada impide llevar un control estricto sobre las fechas de vencimiento de los préstamos, el estado físico de los libros y el historial de uso por parte de los usuarios. Esta desorganización afecta la toma de decisiones administrativas, ya que la consolidación de datos para la emisión de reportes e informes de gestión requiere un esfuerzo considerable y carece de la precisión necesaria.
 
-Ante esta situación, se hace indispensable el desarrollo e implementación de una aplicación de escritorio robusta sobre C#, Windows Forms y SQL Server. Esta solución tecnológica permitirá centralizar la información bibliográfica, automatizar el ciclo transaccional de préstamos y devoluciones y garantizar la integridad y consistencia de los datos almacenados, transformando la administración de la biblioteca en un proceso eficiente, seguro y escalable.
+Ante esta situación, se hace indispensable el desarrollo e implementación de una aplicación de escritorio robusta sobre C#, Windows Forms y SQL Server. Esta solución tecnológica permitirá centralizar la información bibliográfica, automatizar el ciclo transaccional de préstamos y devoluciones para garantizar la integridad y consistencia de los datos almacenados, transformando la administración de la biblioteca en un proceso eficiente, seguro y escalable.
 
 ## 3.2 Justificación
 
@@ -112,7 +112,7 @@ Desde la perspectiva institucional, es indispensable migrar de un esquema de ges
 
 ## 3.3 Alcance
 
-Entre los beneficios operativos principales destacan:
+Entre los beneficios operativos principales se destacan:
 
 -   Automatización del ciclo transaccional: Garantiza el seguimiento preciso de los préstamos y devoluciones en tiempo real, evitando discrepancias en el inventario y facilitando el control de fechas de entrega.
 -   Optimización de la toma de decisiones: La capacidad de generar reportes detallados y consolidados permite al personal administrativo evaluar el estado del catálogo, identificar los materiales más demandados y planificar adquisiciones futuras de forma informada.
@@ -125,7 +125,7 @@ Entre los beneficios operativos principales destacan:
 
 -   Delimitación y Alcance del Proyecto
 -   Plataformas y Accesibilidad Web / Móvil
-- Gestión Económica y Sanciones
+-   Gestión Económica y Sanciones
 
 ------------------------------------------------------------------------
 
@@ -143,8 +143,8 @@ El Sistema de Gestión de Biblioteca permitirá administrar de manera centraliza
 
   | Actor | Descripción |
 | :--- | :--- |
-| **Bibliotecario / Administrador** | Usuario principal con acceso total. Gestiona el catálogo de libros, autores y editoriales. |
-| **Asistente de Biblioteca** | Usuario operativo que realiza búsquedas, préstamos y devoluciones en mostrador. |
+| **Bibliotecario / Administrador** | Usuario principal con acceso total. Gestiona el catálogo de libros, autores, editoriales, usuarios, préstamos/devoluciones y consultas. |
+| **Asistente de Biblioteca** | Usuario operativo que realiza búsquedas, registra préstamos y devoluciones en mostrador. |
   -----------------------------------------------------------------------
 
 
@@ -157,9 +157,9 @@ El Sistema de Gestión de Biblioteca permitirá administrar de manera centraliza
 | **RF03** | **Gestionar categorías** | Registrar, consultar, actualizar y eliminar las categorías o géneros de los libros. |
 | **RF04** | **Gestionar usuarios** | Registrar, consultar, actualizar y eliminar la información de los usuarios (estudiantes/docentes). |
 | **RF05** | **Registrar préstamos** | Registrar las salidas de libros y actualizar automáticamente la disponibilidad del inventario. |
-| **RF06** | **Registrar devoluciones** | Registrar la recepción de libros prestados y calcular días de retraso o penalización cuando aplique. |
+| **RF06** | **Registrar devoluciones** | Registrar la recepción de libros prestados. |
 | **RF07** | **Realizar consultas** | Consultar libros disponibles, préstamos activos, historial de transacciones y usuarios con entregas pendientes. |
-| **RF08** | **Generar reportes** | Emitir e imprimir informes detallados sobre el estado del inventario, préstamos por periodo y morosidad de usuarios. |
+| **RF08** | **Generar reportes** | Emitir e imprimir informes detallados sobre el estado del inventario, préstamos activos y usuarios registrados. |
   -----------------------------------------------------------------------
 
 ## 4.4 Requerimientos no funcionales
@@ -208,14 +208,12 @@ actualizarse.
 Al registrar una devolución, la disponibilidad deberá actualizarse
 nuevamente.
 
-### RN08 -- Multa
+### RN08 -- Límite máximo de préstamos
 
-La multa se calculará únicamente cuando exista retraso en la devolución.
-
-### RN09 -- Límite máximo de préstamos
 No se permitirá realizar un nuevo préstamo a un usuario que ya cuente con 3 o más libros en estado activo/prestado.
 
 ### RN10 -- Restricción por morosidad
+
 No se procesarán nuevos préstamos a usuarios que mantengan entregas pendientes con días de retraso o multas no saldadas.
 
 ------------------------------------------------------------------------
@@ -320,13 +318,11 @@ graph LR
 - Debe existir un registro de préstamo activo vinculado al usuario y al libro que se va a devolver.
 
 **Flujo principal:**
-1. El actor ingresa al módulo de devoluciones e ingresa el documento del usuario o el código del préstamo.
+1. El actor ingresa al módulo de prestamos e ingresa el nombre del usuario y el libro prestado.
 2. El sistema busca y despliega la lista de préstamos activos correspondientes.
 3. El actor selecciona el préstamo o ejemplar que el usuario está entregando.
-4. El sistema compara la fecha actual con la fecha límite de devolución y calcula automáticamente si existen días de retraso.
-5. El sistema calcula el monto de la multa por mora en caso de aplicar, según la tarifa establecida.
-6. El actor confirma la recepción del ejemplar.
-7. El sistema incrementa el stock disponible del libro, actualiza el estado del préstamo a "Devuelto" en SQL Server y muestra el resumen de la entrega (con o sin penalización).
+4. El actor confirma la recepción del ejemplar.
+5. El sistema incrementa el stock disponible del libro, actualiza el estado del préstamo a "Devuelto" en SQL Server.
 
 **Flujos alternativos:**
 - **F-Alt 1 (Préstamo no encontrado):** Si el código ingresado no coincide con ningún préstamo en estado "Activo", el sistema muestra un aviso de error indicando que la devolución no puede procesarse.
@@ -336,6 +332,7 @@ graph LR
 **Postcondiciones:**
 - El estado del préstamo cambia a "Devuelto" (o "Devuelto con mora") en la base de datos de SQL Server.
 - El stock disponible del libro incrementa en 1 unidad en el inventario.
+
 
 # 6. DIAGRAMA DE CLASES
 
@@ -722,8 +719,8 @@ Es la capa mediante la cual el usuario interactúa con el sistema, gestionando l
 - `FrmAutores`: Gestión del catálogo de autores.
 - `FrmEditoriales`: Gestión de editoriales de libros.
 - `FrmUsuarios`: Registro y administración de usuarios.
-- `FrmPrestamos`: Registro y control de préstamos.
-- `FrmDevoluciones`: Control de devoluciones y seguimiento de retrasos.
+- `FrmPrestamos`: Registro, control y estado de los préstamos, si fueron devueltos o estan prestados.
+- `FrmReportes`: Control de información relevante de la biblioteca..
 
 **Tecnología utilizada:**  
 - C#
@@ -736,20 +733,21 @@ Es la capa mediante la cual el usuario interactúa con el sistema, gestionando l
 Procesa las solicitudes provenientes de la interfaz de usuario, aplica las reglas de negocio del dominio y coordina las operaciones entre la capa de presentación y la capa de acceso a datos.
 
 **Componentes:**  
-- `LibroController`: Control y validación del inventario de libros.
-- `AutorController`: Gestión y reglas asociadas a los autores.
-- `EditorialController`: Validación y mantenimiento de editoriales.
-- `UsuarioController`: Verificación del estado y vigencia de usuarios.
-- `PrestamoController`: Procesamiento de solicitudes de préstamos.
-- `DevolucionController`: Control de devoluciones, cálculo de retrasos y actualización de registros.
+- `LibrosController`: Control y validación del inventario de libros.
+- `AutoresController`: Gestión y reglas asociadas a los autores.
+- `EditorialesController`: Validación y mantenimiento de editoriales.
+- `UsuariosController`: Verificación del estado y vigencia de usuarios.
+- `PrestamosController`: Procesamiento de solicitudes de préstamos y control de estado del registro.
+- `ReportesController`: Control de consulta sobre información importante de la biblioteca. 
 
 **Ejemplos de reglas:**  
 - Validar la disponibilidad del libro antes de registrar un préstamo.
 - Validar la existencia activa del usuario en el sistema.
 - Validar la existencia del libro seleccionado.
-- Calcular los días de retraso en la entrega del libro.
-- Calcular el monto de la multa según los días de mora acumulados.
+- Listado de libros registrados.
 - Actualizar automáticamente los estados de préstamos y ejemplares.
+- Préstamos activos y devueltos.
+- Actualizar la fecha de devolución, cuando corresponda.
 
 ## 9.5 Capa de Acceso a Datos
 
@@ -762,8 +760,8 @@ Gestiona la comunicación entre la aplicación y la base de datos SQL Server, ej
 - `AutorDAO`: Operaciones de persistencia relativas a los autores.
 - `EditorialDAO`: Operaciones para el catálogo de editoriales.
 - `UsuarioDAO`: Consultas y registro de usuarios en el sistema.
-- `PrestamoDAO`: Control de datos para las transacciones de préstamos.
-- `DevolucionDAO`: Registro y persistencia de las devoluciones efectuadas.
+- `PrestamoDAO`: Control de datos para las transacciones de préstamos y registro de las devoluciones efectuadas.
+- `ReportesDAO`: Registro de movimiento importante en la biblioteca.
 
 **Tecnologías utilizadas:**  
 - SQL Server
@@ -779,13 +777,12 @@ Almacenar de forma persistente y estructurada toda la información del sistema, 
 
 **Tablas principales:**
 
-- `Autor`
-- `Editorial`
-- `Libro`
-- `Usuario`
-- `Prestamo`
-- `DetallePrestamo`
-- `Devolucion`
+- `Autores`
+- `Editoriales`
+- `Libros`
+- `Usuarios`
+- `Prestamos`
+
 
 ## 9.7 Flujo de información
 
@@ -810,8 +807,9 @@ Gestionar el inventario físico de la biblioteca, administrando la alta, modific
 - Registrar.
 - Consultar.
 - Actualizar.
-- Eliminar.
+- Eliminar (respetando las restricciones de integridad de la base de datos).
 - Buscar.
+- Relacionar el lbro con su autor.
 
 **Validaciones:**
 - El título y campos clave no pueden ser nulos.
@@ -824,21 +822,31 @@ Gestionar el inventario físico de la biblioteca, administrando la alta, modific
 Mantener un registro centralizado de los autores de las obras literarias para su correcta vinculación relacional con los libros.
 
 **Funcionalidades:**
+- Buscar.
 - Registrar.
 - Consultar.
 - Actualizar.
 - Eliminar.
 
-## 10.3 Módulo de categorías / editoriales
+**Validaciones:**
+- El Id o nombre del autor no pueden ser nulos.
+- Relación entre el nombre y el apellido.
+
+
+## 10.3 Módulo de editoriales
 
 **Objetivo:**  
-Administrar las casas editoriales y categorías temáticas que clasifican la colección bibliográfica del sistema.
+Administrar las casas editoriales que estan registradas en la colección bibliográfica del sistema.
 
 **Funcionalidades:**
+
 - Registrar.
 - Consultar.
 - Actualizar.
 - Eliminar.
+
+**Validación:**
+- El Id o nombre de la editorial no pueden ser nulos.
 
 ## 10.4 Módulo de usuarios
 
@@ -846,93 +854,90 @@ Administrar las casas editoriales y categorías temáticas que clasifican la col
 Administrar el padrón de socios o lectores habilitados para solicitar préstamos de libros dentro de la institución.
 
 **Funcionalidades:**
+- Buscar. 
 - Registrar.
 - Consultar.
 - Actualizar.
 - Eliminar.
 
+**Validación:**
+- Los campos requeridos no pueden quedar en blanco o nulos.
+
 ## 10.5 Módulo de préstamos
 
 **Objetivo:**  
-Controlar la salida temporal de libros, asociando ejemplares con usuarios y definiendo plazos estimados de entrega.
+Controlar la salida temporal de libros, asociando ejemplares con usuarios y definiendo el tiempo de entrega y devolución. 
 
 **Funcionalidades:**
 - Registrar préstamo.
-- Consultar préstamos activos.
-- Consultar historial.
-- Actualizar disponibilidad de ejemplares.
+- Registrar la fecha de dvolución de un ejemplar.
+- Actualizar el estado del préstamo a «Devuelto».
+- Eliminar un registro respetando las restricciones de integridad de la base de datos.
 
-## 10.6 Módulo de devoluciones
+**Validaciones:**
+- Los campo principales requeridos no pueden estar vacios. 
+- Se debe tener stock del ejemplar antes de hacer un prestamo. 
+
+## 10.6 Módulo de consultas
 
 **Objetivo:**  
-Registrar el retorno de los libros prestados, calculando desfases en el tiempo de entrega, actualizar disponibilidad
-
-**Funcionalidades:**
-- Registrar devolución.
-- Calcular días de retraso.
-- Calcular multa cuando aplique.
-- Actualizar disponibilidad en el catálogo.
-
-## 10.7 Módulo de consultas
+Controlar la busqueda de información importante de la biblioteca. 
 
 **Consultas implementadas:**
 
 - Total de libros registrados.
 - Total de usuarios registrados.
-- Libros disponibles.
 - Libros prestados.
-- Usuarios con préstamos activos.
-- Historial de préstamos.
-- Libros más prestados.
-- Reporte de devoluciones y multas aplicadas.
+- Reporte de devoluciones.
 ------------------------------------------------------------------------
 
 # 11. CAPTURAS DE PANTALLA DEL SISTEMA
 
 En esta sección se incluyen las evidencias visuales del funcionamiento de la interfaz de usuario de la aplicación.
 
-## 11.1 Menú principal
+## 11.1 Menú Principal
 
 ![Menú principal](imagen1.png)
 
 **Descripción:** Pantalla inicial del sistema que funciona como panel de control central. Proporciona un menú lateral de navegación para acceder a los módulos de Libros, Usuarios, Autores, Editoriales, Préstamos, Devoluciones y Reportes.
 
-## 11.2 Gestión de libros
+## 11.2 Gestión de Libros
 
 ![Gestión de libros](libros.png)
 
 **Descripción:** Interfaz destinada a la administración del inventario de libros. Permite registrar nuevos títulos, consultar la lista completa, actualizar stock o información y realizar búsquedas por filtro.
 
-## 11.3 Gestión de autores
+## 11.3 Gestión de Autores
 
 ![Gestión de autores](autores.png)
 
 **Descripción:** Ventana diseñada para la gestión de los autores del sistema, permitiendo su alta, modificación y consulta para vincularlos con el catálogo de libros.
 
-## 11.4 Gestión de categorías / editoriales
+## 11.4 Gestión de Editoriales
 
 ![Gestión de categorías](editoriales.png)
 
 **Descripción:** Módulo de mantenimiento de clasificaciones y casas editoriales, permitiendo la organización temática de las colecciones bibliográficas.
 
-## 11.5 Gestión de usuarios
+## 11.5 Gestión de Usuarios
 
 ![Gestión de usuarios](usuarios.png)
 
 **Descripción:** Pantalla para el registro y administración de los datos personales y de contacto de los lectores/socios habilitados para realizar préstamos.
 
-## 11.6 Registro de préstamos
+## 11.6 Registro de Préstamos
 
 ![Registro de préstamos](prestamos.png)
 
-**Descripción:** Formulario transaccional para procesar las salidas de libros, vinculando el usuario con los libros solicitados y registrando la fecha límite de entrega.
+**Descripción:** Formulario transaccional para procesar las salidas de libros, vinculando el usuario con los libros solicitados y registrando la fecha límite de prestamo y devolución.
 
 
-## 11.7 Consultas y reportes
+## 11.7 Consultas y Reportes
 
 ![Consultas](reportes.png)
 
 **Descripción:** Módulo de reportes consolidado que permite consultar el total de libros, estado de préstamos activos, usuarios en mora e historial transaccional del sistema.
+
 ------------------------------------------------------------------------
 
 # 12. PRUEBAS DE FUNCIONAMIENTO
@@ -951,10 +956,10 @@ El funcionamiento del sistema se verificó mediante la ejecución de pruebas uni
 | **CP04** | Registrar préstamo | Seleccionar un libro disponible y un usuario activo. | Préstamo registrado y disponibilidad del ejemplar descontada. | Transacción completada y stock actualizado automáticamente. | **Aprobado** |
 | **CP05** | Registrar préstamo | Intentar prestar un libro cuyo stock esté en 0 o no disponible. | Impedir el préstamo y notificar la falta de disponibilidad. | El sistema bloquea la transacción y lanza advertencia. | **Aprobado** |
 | **CP06** | Registrar devolución | Procesar el retorno de un préstamo activo en la fecha estimada. | Registrar la devolución y restaurar la disponibilidad del libro. | Devolución registrada y ejemplar nuevamente disponible. | **Aprobado** | 
-| **CP07** | Consulta de libros | Filtrar el catálogo para consultar libros en estado disponible. | Mostrar el listado preciso de ejemplares aptos para préstamo. | La lista se actualiza mostrando solo los libros disponibles. | **Aprobado** |
+| **CP07** | Consulta de libros | Consultar el catálogo para ver en que estado de existencias se encuentran. | Mostrar el listado preciso de ejemplares con la cantidad de existencia de los mismos. | La consulta despliega la lista de todos los libros registrados y su cantidad de existencia. | **Aprobado** |
 
 
-  ------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
 
 ## 12.3 Evidencias de pruebas
 
@@ -989,7 +994,7 @@ En esta sección se adjuntan las capturas de pantalla que respaldan la ejecució
 
 **Resultado:** Se seleccionó un usuario activo y un libro disponible. Al confirmar la transacción, se generó el préstamo y el stock del ejemplar disminuyó automáticamente en el inventario.
 
-### Prueba CP05: Procesamiento de devolución y cálculo de mora
+### Prueba CP05: Procesamiento de devolución 
 
 ![Evidencia CP05](registro_devolucion.png)
 
@@ -1009,7 +1014,7 @@ En esta sección se adjuntan las capturas de pantalla que respaldan la ejecució
 
 **Resultado:** Se accedió al módulo de consultas/reportes y se solicitó la generación del informe de préstamos activos e historial transaccional. El sistema procesó las consultas sobre la base de datos `Biblioteca-ACA-ProgramacionA` y presentó los resultados consolidados de forma precisa en el panel[cite: 1].
 
-------------------------------------------------------------------------
+--------------------------------------------------------------------------------------
 
 # 13. CONCLUSIONES
 
@@ -1029,7 +1034,16 @@ La implementación de la arquitectura por capas garantizó una clara separación
 
 Se superaron las dificultades técnicas de configuración en el motor de base de datos SQL Server mediante el correcto adjuntado del archivo `.mdf`, el mapeo de permisos de usuario (`db_owner`) y la parametricación adecuada de las cadenas de conexión y consultas.
 
+## Conclusión 5 
+
+Con la aplicación de excepciones en cada formulario se pudo realizar la debida validación de información ingresada por el usuario, aplicando asi el objetivo de la implementación de unabase de datos relacional al proyecto para asegurar que no existiera información duplicada o datos huerfanos. 
+
+## Conclusión 6 
+
+Utilizar la herramienta tecnologica `Github` en sus dos versiones (web y desktop) fue de gran ayuda al momento de tener un control sobre las versiones del proyecto, guardar los cambios en un espacio seguro, llevar un registro de lo trabajado y en la gestión del trabajo en equipo. 
+
 ------------------------------------------------------------------------
+
 # 14. RECOMENDACIONES
 
 - **Futuras mejoras:** Implementar la migración de la base de datos a un servidor centralizado en la nube para permitir el acceso concurrente de múltiples usuarios desde distintas sedes.
@@ -1038,11 +1052,13 @@ Se superaron las dificultades técnicas de configuración en el motor de base de
 - **Nuevas funcionalidades:** Desarrollar un sistema de notificaciones automáticas por correo electrónico para avisar el vencimiento de préstamos e integrar un lector de código de barras para la búsqueda rápida de ejemplares.
 - **Optimización de rendimiento:** Aplicar paginación y optimización de consultas en los formularios con listas extensas de registros para mejorar los tiempos de respuesta de la interfaz gráfica.
 ------------------------------------------------------------------------
+
 # 15. REFERENCIAS BIBLIOGRÁFICAS
 
 *Nota del autor:* El presente proyecto fue desarrollado de manera autónoma como un ejercicio de integración práctica de software, basado exclusivamente en las guías del curso, la especificación de requerimientos de la asignatura y la implementación directa de código. No se consultaron fuentes bibliográficas, teóricas ni investigaciones externas para la ejecución de la solución.
 
 ------------------------------------------------------------------------
+
 # ANEXOS
 
 ## Anexo A. Repositorio GitHub
